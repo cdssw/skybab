@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sky Bab - 전망 좋은 한상 차림 식당</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0; padding: 0;
+      background: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #f04e23;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      color: #f04e23;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .menu-item {
+      flex: 1 1 45%;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 0 5px #ddd;
+      border-radius: 8px;
+    }
+    .menu-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .contact {
+      background: #f04e23;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 1rem;
+      color: #777;
+      margin-top: 2rem;
+    }
+    @media(max-width: 600px) {
+      .menu-item {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sky Bab (스카이 밥)</h1>
+    <p>12층 전망을 즐기며 매일 바뀌는 정성 가득 한상 차림</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>오늘의 메뉴</h2>
+      <div class="menu">
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="메인 요리" />
+          <h3>메인 요리</h3>
+          <p>한국식 불고기 또는 매일 다른 신선한 요리 제공</p>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=600&q=80" alt="반찬" />
+          <h3>반찬</h3>
+          <p>계절별 제철 재료로 매일 새롭게 준비된 반찬</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>식당 정보</h2>
+      <p>📍 서울 마포구 ○○로 123, ○○빌딩 12층</p>
+      <p>⏰ 영업시간: 11:30 ~ 14:00 / 17:30 ~ 20:30</p>
+      <p>📞 예약 및 문의: <a href="tel:01012345678">010-1234-5678</a></p>
+    </section>
+
+    <section>
+      <h2>왜 Sky Bab인가요?</h2>
+      <ul>
+        <li>✅ 전망 좋은 12층에서 식사</li>
+        <li>✅ 매일 바뀌는 다양한 한상 메뉴</li>
+        <li>✅ 직장인과 혼밥러 모두 환영</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>지금 예약하세요!</h2>
+      <p>☎️ <a href="tel:01012345678">010-1234-5678</a></p>
+      <p>📸 인스타그램: <a href="https://instagram.com/skybab_official" target="_blank">@skybab_official</a></p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Sky Bab. All rights reserved.
+  </footer>
+</body>
+</html>
