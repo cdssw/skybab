@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스카이밥 - 용인 중앙동 CGV 12층</title>
     <meta name="description" content="용인 중앙동 CGV 12층 스카이밥 랜딩 페이지입니다. 맛있는 한 끼를 만나보세요.">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"> <!-- 한국어 폰트 사용 -->
+
     <!-- 방문자 수 집계를 위한 구글 애널리틱스 또는 다른 서비스 코드를 여기에 삽입합니다. -->
     <!-- 예: Google Analytics 4 (GA4) 태그 시작 -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script> -->
@@ -17,46 +19,295 @@
     <!-- GA4 태그 끝 -->
 
     <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f8f8f8; color: #333; }
-        .container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; }
-        header { background: #ffffff; color: #333; padding: 10px 0; border-bottom: 1px solid #eee; text-align: center; }
-        header h1 { margin: 0; font-size: 2em; color: #555; }
-        header p { margin-top: 5px; font-size: 1.1em; color: #777; }
-        .hero-section { background: url('[대표 이미지 URL]') no-repeat center center/cover; color: white; text-align: center; padding: 100px 20px; position: relative; }
-        .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); } /* 이미지 위에 어둡게 오버레이 */
-        .hero-section .container { position: relative; z-index: 1; }
-        .hero-section h2 { margin: 0; font-size: 3em; margin-bottom: 20px; }
-        .hero-section p { font-size: 1.5em; }
+        /* 기본 스타일 초기화 및 폰트 설정 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            scroll-behavior: smooth; /* 부드러운 스크롤 */
+        }
 
-        .section { padding: 40px 20px; text-align: center; }
-        .section:nth-child(even) { background-color: #f0f0f0; } /* 섹션 배경 색상 교차 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
 
-        .section h2 { color: #555; margin-bottom: 30px; font-size: 2em; }
-        .section p { font-size: 1.1em; margin-bottom: 20px; }
-        .section img { max-width: 100%; height: auto; margin-bottom: 20px; border-radius: 8px; }
+        /* 헤더 */
+        header {
+            background: #ffffff;
+            color: #333;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            position: sticky; /* 스크롤 시 상단 고정 */
+            top: 0;
+            z-index: 1000; /* 다른 요소 위에 표시 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-        .menu-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .menu-item { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-        .menu-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
-        .menu-item h3 { margin: 0; font-size: 1.3em; color: #333; }
-        .menu-item p { margin: 5px 0 0; color: #666; font-size: 1em; }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #555;
+        }
 
-        .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .contact-item { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; flex: 1 1 300px; }
-        .contact-item h3 { margin-top: 0; color: #555; }
+        header p {
+            margin-top: 5px;
+            font-size: 1.1em;
+            color: #777;
+        }
 
+        /* 히어로 섹션 */
+        .hero-section {
+            background: url('[대표 이미지 URL]') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            display: flex; /* 중앙 정렬을 위해 flex 사용 */
+            align-items: center;
+            justify-content: center;
+            min-height: 600px; /* 최소 높이 설정 */
+        }
 
-        footer { background: #333; color: #fff; text-align: center; padding: 20px 0; margin-top: 30px; font-size: 0.9em; }
-        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* 이미지 위에 어둡게 오버레이 */
+        }
 
-         @media (max-width: 768px) {
-            .hero-section { padding: 60px 20px; }
-            .hero-section h2 { font-size: 2em; }
-            .hero-section p { font-size: 1.2em; }
-            .section { padding: 30px 10px; }
-            .section h2 { font-size: 1.8em; }
-            .menu-gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h2 {
+            margin: 0;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 */
+        }
+
+        .hero-section p {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6600; /* CTA 버튼 색상 */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease; /* 호버 효과 */
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+
+        /* 일반 섹션 */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0; /* 초기에는 투명하게 */
+            transform: translateY(50px); /* 초기에는 아래로 이동 */
+            transition: opacity 1s ease-out, transform 1s ease-out; /* 애니메이션 효과 */
+        }
+
+        .section.is-visible {
+            opacity: 1; /* 스크롤 시 나타나게 */
+            transform: translateY(0);
+        }
+
+        .section:nth-child(odd) { background-color: #ffffff; }
+        .section:nth-child(even) { background-color: #f0f0f0; }
+
+        .section h2 {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #ff6600;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+
+        .section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 메뉴 갤러리 */
+        .menu-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 카드 크기 조정 */
+            gap: 30px; /* 카드 간 간격 */
+            margin-top: 40px;
+        }
+
+        .menu-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* 그림자 효과 강화 */
+            text-align: left;
+            transition: transform 0.3s ease-in-out; /* 호버 애니메이션 */
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px); /* 호버 시 위로 살짝 이동 */
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px; /* 이미지 높이 고정 */
+            object-fit: cover; /* 이미지 비율 유지하면서 채우기 */
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4em;
+            color: #333;
+        }
+
+        .menu-item p {
+            margin: 0;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* 연락처 정보 */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; /* 항목 간 간격 */
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            text-align: center;
+            flex: 1 1 300px; /* 유연한 너비 설정 */
+            max-width: 350px; /* 최대 너비 제한 */
+        }
+
+        .contact-item h3 {
+            margin-top: 0;
+            color: #555;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .contact-item p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .contact-item a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* 푸터 */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 20px;
+                min-height: 400px;
+            }
+            .hero-section h2 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.3em;
+            }
+
+            .section {
+                padding: 40px 10px;
+            }
+            .section h2 {
+                font-size: 2em;
+            }
+             .section p {
+                font-size: 1em;
+            }
+
+            .menu-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column; /* 세로로 배치 */
+                gap: 20px;
+            }
+
+             .contact-item {
+                 max-width: 100%; /* 모바일에서 너비 꽉 채우기 */
+             }
         }
     </style>
 </head>
@@ -75,8 +326,7 @@
         <div class="container">
             <h2>[스카이밥 대표 문구]</h2>
             <p>[식당의 매력을 어필하는 짧은 설명]</p>
-            <!-- 예약하기, 오시는 길 등 주요 CTA 버튼 추가 -->
-            <!-- <p><a href="#contact" style="background-color:#fff; color:#333; padding:10px 20px; text-decoration:none; border-radius:5px; font-weight:bold;">방문 안내</a></p> -->
+            <a href="#contact" class="cta-button">방문 안내 & 문의</a> <!-- CTA 버튼 추가 -->
         </div>
     </section>
 
@@ -112,7 +362,7 @@
                 <!-- 더 많은 메뉴 항목 추가 -->
             </div>
             <!-- 전체 메뉴판 링크 등을 추가할 수 있습니다. -->
-            <!-- <p style="margin-top: 30px;"><a href="#menu" style="color:#555; text-decoration:none; font-weight:bold;">전체 메뉴 보기</a></p> -->
+            <!-- <p style="margin-top: 30px;"><a href="#menu" style="color:#ff6600; text-decoration:none; font-weight:bold;">전체 메뉴 보기</a></p> -->
         </div>
     </section>
 
@@ -125,39 +375,25 @@
                     <p>경기도 용인시 처인구 김량장동 CGV 건물 12층</p>
                     <!-- 네이버 지도, 카카오 지도 링크 또는 약도 이미지 추가 -->
                     <!-- <img src="[약도 이미지 URL]" alt="오시는 길 약도"> -->
-                    <!-- <p><a href="[네이버 지도 링크]" target="_blank">네이버 지도에서 보기</a></p> -->
+                    <p><a href="[네이버 지도 링크]" target="_blank">네이버 지도에서 보기</a></p>
                 </div>
                 <div class="contact-item">
                     <h3>영업 시간</h3>
                     <p>[월요일: 00:00 - 00:00]</p>
                     <p>[화요일: 00:00 - 00:00]</p>
                     <p>[... 요일별 시간 ...]</p>
-                    <p>[브레이크 타임: 00:00 - 00:00]</p>
+                    <p>브레이크 타임: [00:00 - 00:00]</p>
                     <p>정기 휴무: [휴무일]</p>
                 </div>
                 <div class="contact-item">
                     <h3>문의</h3>
-                    <p>전화: [스카이밥 전화번호]</p>
+                    <p>전화: <a href="tel:[스카이밥 전화번호]">[스카이밥 전화번호]</a></p> <!-- 전화 걸기 링크 -->
                     <p>이메일: [이메일 주소 (선택 사항)]</p>
                     <!-- 예약/문의 양식 또는 링크 추가 -->
-                    <!-- <p style="margin-top: 15px;"><a href="#inquiry" style="color:#555; text-decoration:none; font-weight:bold;">문의하기</a></p> -->
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 프랜차이즈/창업 문의 섹션 (얌샘김밥처럼 필요하다면 추가) -->
-    <!-- <section class="section" style="background-color: #fff;"> -->
-    <!--     <div class="container"> -->
-    <!--         <h2>창업 문의</h2> -->
-    <!--         <p>스카이밥과 함께 성공적인 사업을 시작하세요!</p> -->
-    <!--         <!-- 간단한 문의 폼 또는 문의 안내 -->
-    <!--         <!-- <form action="[문의 처리 스크립트 URL]" method="post"> -->
-    <!--             <!-- 폼 필드들 -->
-    <!--         <!-- </form> -->
-    <!--     </div> -->
-    <!-- </section> -->
-
 
     <footer>
         <div class="container">
@@ -165,6 +401,40 @@
             <p><a href="[개인정보처리방침 페이지 URL]">개인정보처리방침</a> | <a href="[이용약관 페이지 URL]">이용약관</a></p>
         </div>
     </footer>
+
+    <script>
+        // 스크롤 시 섹션 나타나는 애니메이션
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // 한 번 나타난 후에는 더 이상 관찰하지 않음
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3 // 섹션의 30%가 보일 때 애니메이션 실행
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 부드러운 스크롤 (앵커 링크 클릭 시)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
