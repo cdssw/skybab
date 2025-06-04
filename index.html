@@ -1,235 +1,116 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SKY BAB - 전망 좋은 한상 차림 식당</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      margin: 0; padding: 0;
-      background: #fff8f0;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background: #d9401f;
-      color: white;
-      padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
-      position: relative;
-      min-height: 80px; /* 추가 */
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.3rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-    /* 예약하기 버튼 */
-    .btn-reserve {
-      position: absolute;
-      right: 1.5rem;  /* 수정 */
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #ff5a36;
-      color: white;
-      padding: 0.5rem 1.2rem; /* 약간 줄임 */
-      font-weight: 700;
-      font-size: 0.95rem;    /* 약간 줄임 */
-      line-height: 1;       /* 추가 */
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(255,90,54,0.6);
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      user-select: none;
-    }
-    .btn-reserve:hover {
-      background-color: #cc4629;
-      box-shadow: 0 5px 12px rgba(204,70,41,0.8);
-    }
-    /* 상단 대표 이미지 */
-    .top-image {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-      border-bottom: 4px solid #d9401f;
-    }
-    .top-image:hover {
-      transform: scale(1.05);
-    }
-    .container {
-      max-width: 820px;
-      margin: 2rem auto 4rem auto;
-      padding: 0 1rem;
-    }
-    h2 {
-      color: #d9401f;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-    .menu-item {
-      flex: 1 1 45%;
-      background: white;
-      padding: 1rem 1rem 1.5rem 1rem;
-      box-shadow: 0 3px 9px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      transition: box-shadow 0.3s ease;
-    }
-    .menu-item:hover {
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .menu-item img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    .menu-item img:hover {
-      transform: scale(1.07);
-    }
-    .menu-item h3 {
-      margin: 0.8rem 0 0.3rem 0;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #d9401f;
-    }
-    .menu-item p {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.4;
-    }
-    .contact {
-      background: #d9401f;
-      color: white;
-      text-align: center;
-      padding: 2.5rem 1rem;
-      margin-top: 4rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(217,64,31,0.6);
-    }
-    .contact a {
-      color: #fff9f8;
-      font-weight: 700;
-      text-decoration: underline;
-    }
-    .contact a:hover {
-      color: #ffccb8;
-    }
-    .contact h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-    .contact p {
-      font-size: 1.2rem;
-      margin: 0.4rem 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 1.2rem 0;
-      color: #777;
-      margin-top: 3rem;
-      user-select: none;
-    }
-    @media(max-width: 600px) {
-      .menu-item {
-        flex: 1 1 100%;
-      }
-      header {
-        padding: 1.8rem 1rem 1.5rem 1rem;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .btn-reserve {
-        position: static;
-        display: block;
-        width: 100%;
-        margin: 1rem 0 0 0;
-        transform: none;
-        border-radius: 8px;
-        font-size: 1.2rem;
-      }
-      .contact h2 {
-        font-size: 1.6rem;
-      }
-      .contact p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKY BAB</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <img src="image/다운로드.jpeg" alt="Sky Bab 식당 이미지" class="top-image" />
-  <header>
-    <h1>SKY BAB (스카이 밥)</h1>
-    <p>12층 전망을 즐기며 매일 바뀌는 정성 가득 한상 차림</p>
-    <a href="tel:0507-1327-9717" class="btn-reserve">예약하기</a>
-  </header>
-
   <div class="container">
-    <section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>SKY BAB</h1>
+        <p class="subtitle">12층에서 즐기는 프리미엄 한식당</p>
+        <a href="tel:010-2733-7997" class="cta-button">지금 예약하기</a>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
       <h2>오늘의 메뉴</h2>
-      <div class="menu">
-        <div class="menu-item">
-          <img src="image/IMG_8024.jpeg" alt="메인 요리" />
-          <h3>메인 요리</h3>
-          <p>한국식 불고기 또는 매일 다른 신선한 요리 제공</p>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img src="image/IMG_8024.jpeg" alt="메인 요리" class="menu-image">
+          <div class="menu-content">
+            <h3>메인 요리</h3>
+            <p>한국식 불고기 또는 매일 다른 신선한 요리 제공</p>
+            <span class="price">15,000원</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <img src="image/IMG_8036.jpeg" alt="반찬" />
-          <h3>반찬</h3>
-          <p>계절별 제철 재료로 매일 새롭게 준비된 반찬</p>
+        <div class="menu-card">
+          <img src="image/IMG_8036.jpeg" alt="반찬" class="menu-image">
+          <div class="menu-content">
+            <h3>반찬</h3>
+            <p>계절별 제철 재료로 매일 새롭게 준비된 반찬</p>
+            <span class="price">10,000원</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Restaurant Info Section -->
+    <section class="info-section">
       <h2>식당 정보</h2>
-      <p>📍 경기 용인시 처인구 금령로 86 1204호</p>
-      <p>⏰ 영업시간: 11:00 ~ 15:00 (14:30 라스트 오더)</p>
-      <p>📞 예약 및 문의: <a href="tel:010-2733-7997">010-2733-7997</a></p>
+      <div class="info-container">
+        <div class="info-details">
+          <p>📍 경기 용인시 처인구 금령로 86 1204호</p>
+          <p>⏰ 영업시간: 11:00 ~ 15:00 (14:30 라스트 오더)</p>
+          <p>📞 예약 및 문의: <a href="tel:010-2733-7997">010-2733-7997</a></p>
+        </div>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.123456789012!2d127.12345678901234!3d37.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDA3JzI0LjQiTiAxMjfCsDA3JzI0LjQiRQ!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <!-- Why SKY BAB Section -->
+    <section class="features-section">
       <h2>왜 SKY BAB인가요?</h2>
-      <ul>
-        <li>✅ 눈부신 12층 전망과 함께하는 식사!</li>
-        <li>✅ 매일 바뀌는 신선한 한상 차림!</li>
-        <li>✅ 직장인과 혼밥러 모두 환영하는 따뜻한 공간!</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-building"></i>
+          <h3>전망 좋은 12층</h3>
+          <p>눈부신 전망과 함께하는 특별한 식사</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-utensils"></i>
+          <h3>신선한 한상 차림</h3>
+          <p>매일 바뀌는 신선한 메뉴</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-heart"></i>
+          <h3>따뜻한 공간</h3>
+          <p>직장인과 혼밥러 모두 환영</p>
+        </div>
+      </div>
     </section>
 
-    <section class="contact">
+    <!-- Contact Section -->
+    <section class="contact-section">
       <h2>지금 예약하세요!</h2>
-      <p>☎️ <a href="tel:0507-1327-9717">0507-1327-9717</a></p>
-      <p>📸 인스타그램: <a href="https://instagram.com/skybab_official" target="_blank">@skybab_official</a></p>
+      <div class="contact-buttons">
+        <a href="tel:0507-1327-9717" class="phone-button">
+          <i class="fas fa-phone"></i>
+          0507-1327-9717
+        </a>
+        <a href="https://instagram.com/skybab_official" class="instagram-button" target="_blank">
+          <i class="fab fa-instagram"></i>
+          @skybab_official
+        </a>
+      </div>
     </section>
   </div>
 
-  <footer>
-    &copy; 2025 SKY BAB. All rights reserved.
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 SKY BAB. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
   </footer>
 </body>
-</html>
+</html> 
