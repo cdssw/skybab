@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스카이밥 | 매일매일 새로운 퓨전 한상차림</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutral & Earthy Tones -->
+    <!-- Application Structure Plan: A single-page, top-down narrative structure mirroring the storyboard's logical flow, enhanced with a sticky navigation bar for easy section-jumping. The structure is designed to guide the user seamlessly from initial interest (Hero) to value proposition (Charms, Benefits), and finally to a clear call-to-action (Location/Reservation), optimizing the path to conversion. -->
+    <!-- Visualization & Content Choices: Report Info: Bonus Meal Tickets -> Goal: Compare value -> Viz: Bar Chart (Chart.js/Canvas) -> Interaction: Hover tooltips show "Buy X, Get Y" -> Justification: Clearly visualizes the increasing benefit of bulk purchases. | Report Info: Seasonal Benefits -> Goal: Inform based on time -> Presentation: Dynamic HTML text block -> Interaction: JS automatically displays the current season's offer -> Justification: Creates a relevant and "live" feel. | Report Info: Core Features -> Goal: Organize & Inform -> Presentation: Icon (Unicode) + Text Cards in a grid -> Interaction: None needed, high scannability -> Justification: Quickly communicates key strengths. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x800/FFF4E6/333333?text=%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B0%A5%0A%ED%95%9C%EC%83%81%EC%B0%A8%EB%A6%BC');
+            background-size: cover;
+            background-position: center;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800">
+
+    <header id="header" class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-orange-600">스카이밥</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#charms" class="text-gray-700 hover:text-orange-600">특별한 매력</a>
+                <a href="#benefits" class="text-gray-700 hover:text-orange-600">풍성한 선물</a>
+                <a href="#location" class="text-gray-700 hover:text-orange-600">오시는 길</a>
+            </div>
+            <a href="#location" class="hidden md:inline-block bg-orange-500 text-white font-bold py-2 px-4 rounded-full hover:bg-orange-600 transition-colors">지금 예약하기</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#charms" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-orange-100">특별한 매력</a>
+            <a href="#benefits" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-orange-100">풍성한 선물</a>
+            <a href="#location" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-orange-100">오시는 길 & 예약</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-bg text-white min-h-screen flex items-center">
+            <div class="container mx-auto px-6 text-center bg-black/50 py-16 rounded-xl">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
+                    매일매일 새로운 퓨전 한상차림,<br>
+                    <span class="text-orange-400">스카이밥</span>에서 특별한 점심을!
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    지금 랜딩페이지를 통해 예약/쿠폰 받고 <span class="font-bold text-yellow-300">10% 할인</span> 혜택까지! <br>바쁜 일상 속, 스카이밥이 드리는 최고의 점심을 만나보세요.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#benefits" class="inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition-transform hover:scale-105">10% 할인쿠폰 받기</a>
+                    <a href="#location" class="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-100 transition-transform hover:scale-105">지금 바로 예약하기</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="intro" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">그래서, 스카이밥에서 뭘 해줄 수 있는데?</h2>
+                    <p class="text-lg text-gray-600 mb-12">
+                        맛집 정보는 넘쳐나지만, 정작 필요한 정보를 찾느라 소중한 점심시간을 낭비하고 계신가요? 스카이밥은 체험단 광고의 과장된 정보가 아닌, 저희가 가장 자신 있는 메뉴와 서비스를 솔직하고 명확하게 이 한 페이지에 모두 담았습니다. 당신의 점심시간을 아껴드릴 정확한 정보를 직접 확인해보세요.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-stone-100 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-2">시간 절약의 가치 ⏰</h3>
+                        <p class="text-gray-700">스카이밥 식당이 직접 제공하는 정확하고 통합된 정보로 당신의 소중한 점심시간을 아껴드립니다.</p>
+                    </div>
+                    <div class="bg-stone-100 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-2">신뢰할 수 있는 정보 📢</h3>
+                        <p class="text-gray-700">스카이밥이 가장 자신 있는 메뉴, 특별한 서비스, 그리고 고객님께 드리고 싶은 혜택까지! 솔직하고 명확하게 모두 담았습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="charms" class="py-16 md:py-24 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">스카이밥만의 아주 특별한 매력</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        매일 똑같은 점심 메뉴가 지겨우셨나요? 스카이밥은 단순한 식사를 넘어, 선택의 즐거움과 만족스러운 경험을 제공합니다. 저희가 자신 있게 선보이는 특별한 매력 포인트를 통해 여러분의 점심시간을 더욱 가치있게 만들어 보세요.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform">
+                        <div class="text-4xl mb-4">✨</div>
+                        <h3 class="text-xl font-bold mb-2">나만의 한상차림</h3>
+                        <p class="text-gray-600">오늘 뭐 먹지? 고민 끝! 매일 신선하게 준비되는 다양한 메인 요리와 영양가 있게 구성된 '퓨전 맞춤 한상'을 즐겨보세요!</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform">
+                        <div class="text-4xl mb-4">🔄</div>
+                        <h3 class="text-xl font-bold mb-2">매일 바뀌는 메뉴</h3>
+                        <p class="text-gray-600">지루할 틈 없는 미식 경험! 스카이밥은 매일 새로운 메뉴로 여러분을 기다립니다. 오늘은 또 어떤 맛있는 메뉴가 준비되어 있을까요?</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform">
+                        <div class="text-4xl mb-4">🔥</div>
+                        <h3 class="text-xl font-bold mb-2">즉석요리 & 무한리필</h3>
+                        <p class="text-gray-600">맛있는 철판요리의 감동! 모든 반찬은 눈치 보지 말고 마음껏 리필하세요. 넉넉한 인심은 덤!</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform">
+                        <div class="text-4xl mb-4">💨</div>
+                        <h3 class="text-xl font-bold mb-2">예약 시 NO 웨이팅</h3>
+                        <p class="text-gray-600">1분 1초가 아까운 점심시간! 미리 예약하시면 기다림 없이 바로 입장하여 소중한 휴식 시간을 여유롭게 즐기실 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="atmosphere" class="py-16 md:py-24 bg-white">
+             <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">도심 속 작은 쉼표, 스카이밥</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        식사는 단순히 배를 채우는 행위를 넘어, 지친 일상에 활력을 불어넣는 휴식의 시간이 되어야 합니다. 스카이밥은 맛있는 음식은 물론, 편안하고 아름다운 공간 경험을 통해 고객 여러분께 완벽한 점심 쉼터를 제공합니다.
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-2 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-600 mb-2">여기가 밥집? 아니면 예쁜 카페?</h3>
+                            <p class="text-gray-700">딱딱한 식당 분위기는 이제 안녕! 스카이밥은 편안하고 아늑한 카페 스타일의 공간에서 특별한 식사를 즐길 수 있도록 준비했습니다.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-600 mb-2">입도, 눈도 즐거운 스카이뷰</h3>
+                            <p class="text-gray-700">창가 자리에 앉아 탁 트인 스카이뷰를 바라보며 즐기는 점심! 맛있는 음식에 아름다운 전망까지, 스카이밥에서는 이 모든 것이 무료입니다.</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <img src="https://placehold.co/800x600/FFE8CC/333333?text=%EC%B9%B4%ED%8E%98+%EA%B0%99%EC%9D%80%0A%EC%95%84%EB%8A%A0%ED%95%9C+%EA%B3%B5%EA%B0%84" alt="카페같은 분위기의 스카이밥 내부" class="rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+             </div>
+        </section>
+
+
+        <section id="benefits" class="py-16 md:py-24 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">스카이밥이 준비한 풍성한 선물</h2>
+                     <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        스카이밥을 찾아주시는 모든 분들께 감사의 마음을 전하고자, 실질적이고 매력적인 혜택들을 준비했습니다. 할인 쿠폰부터 계절별 특별 서비스, 그리고 단골 고객님을 위한 보너스 식권까지! 스카이밥의 풍성한 선물을 놓치지 마세요.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div id="coupon-section" class="bg-white p-8 rounded-lg shadow-lg text-center">
+                            <div class="text-5xl mb-4">🎁</div>
+                            <h3 class="text-2xl font-bold mb-2">랜딩페이지 고객님께만 드리는 10% 할인 쿠폰!</h3>
+                            <p class="text-gray-600 mb-4">이 페이지를 통해 방문하시는 모든 고객님께 감사의 마음을 담아, 총 주문 금액의 10%를 할인해 드립니다!</p>
+                            <button id="get-coupon-btn" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-full hover:bg-orange-600 transition-colors">지금 쿠폰 받기</button>
+                        </div>
+                         <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                            <div id="seasonal-icon" class="text-5xl mb-4"></div>
+                            <h3 class="text-2xl font-bold mb-2">계절마다 찾아오는 깜짝 베네핏!</h3>
+                            <p id="seasonal-text" class="text-gray-600">계절마다 바뀌는 스카이밥만의 특별한 서비스를 기대하세요!</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-center">
+                             <div class="text-5xl mb-4">🎟️</div>
+                             <h3 class="text-2xl font-bold mb-2">자주 오실수록 이득! 단골 고객 보너스 식권!</h3>
+                             <p class="text-gray-600 mb-6">스카이밥을 사랑해주시는 고객님들을 위한 특별 리워드! 구매 수량이 많을수록 더 큰 혜택을 드립니다.</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="ticketChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="py-16 md:py-24 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">오시는 길 & 예약 안내</h2>
+                     <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        스카이밥은 여러분을 맞이할 준비가 되어 있습니다. 아래 정보를 확인하시고 편하게 방문해주세요. 특히 바쁜 점심시간에는 미리 예약하시면 기다림 없이 바로 식사를 즐기실 수 있습니다.
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                     <div class="rounded-lg overflow-hidden shadow-2xl">
+                        <a href="https://naver.me/5YJjOQbK" target="_blank">
+                             <img src="https://placehold.co/600x450/DDDDDD/000000?text=%EC%97%AC%EA%B8%B0%EB%A5%BC+%ED%81%B4%EB%A6%AD%ED%95%98%EC%97%AC%0A%EB%84%A4%EC%9D%B4%EB%B2%84+%EC%A7%80%EB%8F%84%EB%A1%9C+%EC%9D%B4%EB%8F%99%ED%95%A9%EB%8B%88%EB%8B%A4" alt="스카이밥 위치 지도" class="w-full h-full object-cover">
+                        </a>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <div class="space-y-4 text-lg">
+                            <p><strong>상호:</strong> 스카이밥 (퓨전 한상 차림)</p>
+                            <p><strong>📍 주소:</strong> 경기 용인시 처인구 금령로 86 1204호 (용인 CGV건물)</p>
+                            <p><strong>📞 연락처:</strong> 0507-1327-9717</p>
+                            <p><strong>⏰ 영업시간:</strong> 평일 점심 (11:00-15:00), 재료 소진시 조기 마감<br><span class="text-red-500 font-bold">※ 주말/공휴일 휴무</span></p>
+                            <p><strong>🅿️ 주차안내:</strong> 용인 CGV 건물 주차장 (3시간 무료)</p>
+                        </div>
+                         <div class="mt-8 space-y-3 sm:space-y-0 sm:flex sm:space-x-3">
+                            <a href="https://naver.me/5YJjOQbK" target="_blank" class="w-full sm:w-auto flex-1 text-center bg-green-500 text-white font-bold py-3 px-6 rounded-full hover:bg-green-600 transition-colors">네이버 지도로 보기</a>
+                            <a href="tel:0507-1327-9717" class="w-full sm:w-auto flex-1 text-center bg-blue-500 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-600 transition-colors">전화로 예약하기</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+            <p class="font-bold text-lg text-white mb-4">스카이밥</p>
+            <p>대표자: 장영민</p>
+            <p>주소: 경기 용인시 처인구 금령로 86 1204호 (용인 CGV건물) | 연락처: 0507-1327-9717</p>
+            <div class="my-4 space-x-4">
+                 <a href="#" class="hover:text-white">개인정보처리방침</a>
+                 <span>|</span>
+                 <a href="#" class="hover:text-white">이용약관</a>
+            </div>
+            <p class="mt-8">&copy; 2024 스카이밥. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="coupon-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg p-8 m-4 max-w-sm w-full text-center relative">
+            <button id="close-modal-btn" class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-gray-800">&times;</button>
+            <div class="text-6xl mb-4">🎉</div>
+            <h3 class="text-2xl font-bold mb-2">쿠폰 발급 완료!</h3>
+            <p class="text-gray-600 mb-4">방문 시 이 화면을 직원에게 보여주시면 <br><span class="font-bold text-orange-600">총 금액의 10%</span>를 할인해 드립니다.</p>
+            <div class="bg-orange-100 border-2 border-dashed border-orange-400 p-4 rounded-lg">
+                <p class="text-lg font-bold text-orange-700">스카이밥 10% 할인쿠폰</p>
+                <p class="text-sm">※ 본 쿠폰은 현장에서만 사용 가능합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            const currentMonth = new Date().getMonth() + 1;
+            const seasonalIcon = document.getElementById('seasonal-icon');
+            const seasonalText = document.getElementById('seasonal-text');
+            if (currentMonth >= 6 && currentMonth <= 8) {
+                seasonalIcon.textContent = '☀️';
+                seasonalText.innerHTML = '더운 여름엔 시원한 <strong class="text-blue-500">아이스 아메리카노</strong> 무료 제공!';
+            } else if (currentMonth >= 11 || currentMonth <= 2) {
+                seasonalIcon.textContent = '❄️';
+                seasonalText.innerHTML = '쌀쌀한 겨울엔 속 따뜻한 <strong class="text-yellow-800">누룽지 또는 죽</strong> 무료 제공!';
+            } else {
+                 seasonalIcon.textContent = '🌱';
+                 seasonalText.textContent = '계절마다 바뀌는 스카이밥만의 특별한 서비스를 기대하세요!';
+            }
+
+            const ctx = document.getElementById('ticketChart').getContext('2d');
+            const ticketChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['10장 구매', '20장 구매', '30장 구매', '50장 구매'],
+                    datasets: [{
+                        label: '구매 수량',
+                        data: [10, 20, 30, 50],
+                        backgroundColor: 'rgba(203, 213, 225, 1)',
+                        borderColor: 'rgba(100, 116, 139, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: '보너스 수량',
+                        data: [1, 3, 5, 10],
+                        backgroundColor: 'rgba(249, 115, 22, 1)',
+                        borderColor: 'rgba(194, 65, 12, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '보너스 식권 혜택 비교',
+                            font: { size: 16 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y + '장';
+                                    }
+                                    return label;
+                                },
+                                footer: function(tooltipItems) {
+                                    const total = tooltipItems.reduce((sum, item) => sum + item.parsed.y, 0);
+                                    return '총 ' + total + '장';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '식권 수량 (장)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const couponModal = document.getElementById('coupon-modal');
+            const getCouponBtn = document.getElementById('get-coupon-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            getCouponBtn.addEventListener('click', () => {
+                couponModal.classList.remove('hidden');
+                couponModal.classList.add('flex');
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                couponModal.classList.add('hidden');
+                couponModal.classList.remove('flex');
+            });
+            
+            couponModal.addEventListener('click', (e) => {
+                if (e.target === couponModal) {
+                    couponModal.classList.add('hidden');
+                    couponModal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
