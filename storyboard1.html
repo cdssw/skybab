@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X30Q3SQ84"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9X30Q3SQ84');
+    </script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스카이밥 | 매일매일 새로운 퓨전 한상차림</title>
@@ -353,6 +362,11 @@
             const closeModalBtn = document.getElementById('close-modal-btn');
 
             getCouponBtn.addEventListener('click', () => {
+                // GA4로 'coupon_click' 이벤트 전송
+                gtag('event', 'coupon_click', {
+                    'event_category': 'conversion',
+                    'event_label': '10_percent_discount'
+                });
                 couponModal.classList.remove('hidden');
                 couponModal.classList.add('flex');
             });
