@@ -1,0 +1,632 @@
+/***************Noto Sans KR*************/
+@charset "utf-8";
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 100;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Thin.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 200;
+	src: url(../fonts/NotoSanskr/NotoSansKR-ExtraLight.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 300;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Light.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 400;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Regular.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 500;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Medium.woff) format(woff),
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 600;
+	src: url(../fonts/NotoSanskr/NotoSansKR-SemiBold.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 700;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Bold.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 800;
+	src: url(../fonts/NotoSanskr/NotoSansKR-ExtraBold.woff) format(woff);
+}
+
+@font-face {
+	font-family: "NotoSansKR";
+	font-weight: 900;
+	src: url(../fonts/NotoSanskr/NotoSansKR-Black.woff) format(woff);
+}
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+nav,
+output,
+section,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	-webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 10px
+}
+
+
+body {
+	font: 100%;
+	color: #000;
+	font-family: "NotoSansKR", sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+	background: #FFFAF0
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+
+
+/**************02. 구조 *************/
+
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px
+	}
+
+	.menu-btn {
+		display: none !important
+	}
+
+	.main-menu {
+		display: block !important
+	}
+
+	.mobile-menu {
+		display: none !important
+	}
+	.pop-mask{
+		display: none !important
+	}
+}
+
+header {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: #fff;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.11);
+}
+
+nav {
+	padding: 1.75rem 1.5rem;
+	line-height: 1.5rem;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	z-index: 1000;
+}
+
+.container {
+	width: 100%;
+	max-width: 768px;
+/*	display: flex*/
+}
+
+nav .h1 {
+	font-size: 2.0rem;
+	line-height: 1.75rem;
+	font-weight: 700;
+	color: #992626
+}
+
+.main-menu {
+	display: none;
+	position: relative;
+	margin: 0 auto
+}
+
+.main-menu a {
+	color: #444;
+	font-size: 1.2rem;
+	padding: 0 1.5rem;
+}
+
+/**햄버거메뉴**/
+.menu-btnr,
+.menu-btn span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.menu-btn {
+	position: relative;
+	top: 0;
+	right: 1.75rem;
+	width: 2.5rem;
+	height: 2.0rem;
+
+}
+
+.menu-btn span {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+	border-radius: 2px;
+}
+
+.menu-btn span:nth-of-type(1) {
+	top: 0;
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: 0.9rem;
+	width: 80%;
+}
+
+.menu-btn span:nth-of-type(3) {
+	bottom: 0;
+}
+
+.menu-btn.active span:nth-of-type(1) {
+	-webkit-transform: translateY(10px) rotate(-315deg);
+	transform: translateY(9px) rotate(-315deg);
+}
+
+.menu-btn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.menu-btn.active span:nth-of-type(3) {
+	-webkit-transform: translateY(-10px) rotate(315deg);
+	transform: translateY(-9px) rotate(315deg);
+}
+
+
+
+
+
+
+
+.pop-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	opacity: 0.6;
+	z-index: 0;
+}
+
+.mobile-menu {
+	position: fixed;
+	right:-50%;
+	top: 56px;
+	background: #fff;
+	width: 40%;
+	height: 100%;
+	font-size: 1.4rem;
+}
+.mobile-menu.oppenned{
+	right:0;
+	transition: all 0.05s ease-in-out;
+
+}
+
+.btn-close {}
+
+.mobile-menu a {
+	width: 100%;
+	display: block;
+	padding: 2rem;
+	text-align: right;
+	border-bottom: 1px solid #ccc;
+	color: #555
+}
+
+
+
+
+footer{
+	background: #565454;
+	color: #fff;
+	text-align: center
+}
+footer strong{
+	font-size: 2.4rem;
+	font-weight: 700
+		
+}
+
+
+section{
+	position: relative;
+	height:1062px;
+	max-width: 768px;
+	margin: 0 auto;
+	border:1px solid #f1e2da
+}
+
+section.skybab-index{
+	background-image: url(../img/skybab-p01.png);
+	background-repeat:  no-repeat;
+	background-position: bottom  center ;
+	background-size: contain;
+	text-align: center;
+	overflow: hidden
+}
+
+section.skybab-index .div-bg{
+	width: 100%;
+	background-image:url(../img/skybab-bg.png);
+	background-repeat:  no-repeat;
+	background-position: bottom center ;
+	background-size: cover;
+	height: 35rem;
+}
+
+section.skybab-index .skybab-index-txtpoint{
+	position: absolute;
+	left: 2.75rem;
+	top: 2.3rem;
+	height: 4rem;
+	line-height: 2;
+	font-size: 1.75rem;
+	font-weight: 700;
+	background: url(../img/skybab-icon.png) no-repeat left center;
+	background-size: 4rem;
+	padding-left: 4rem;
+	color: #00288D
+}
+
+section.skybab-index .skybab-index-txtmain{
+	position:absolute;
+	top: 6.5rem;
+	width: 100%;
+	text-align: center;
+	font-size: 3.125rem;
+	font-weight: 700;
+	color: #fff;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5)
+}
+
+section.skybab-index .skybab-index-txtmain span{
+	font-size: 3.55rem;
+}
+
+section.skybab-index .skybab-index-txtsub{
+	position:absolute;
+	top: 17.5rem;
+	width: 100%;
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: -0.1rem;
+	color: #fff;
+	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5)
+}
+
+section.skybab-index button{
+	text-align: center;
+	margin-top: 25rem;
+	color: #fff;
+	font-size: 3.25rem;
+	font-weight: 900;
+	letter-spacing: -0.1rem;
+	background: #FB2EAC;
+	border-radius: 25rem;
+	width: 35rem;
+	height: 6rem;
+	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25)
+}
+
+
+
+section.skybab-charms{
+	background: #fff;
+	padding: 0 1.6rem
+}
+
+section.skybab-charms .skybab-charms-txtmain{
+	position: relative;
+	width: 100%;
+	font-size: 3.437rem;
+	font-weight: 700;
+	color: #00288D;
+	width: 100%;
+	text-align: center;
+	margin: 5rem 0 4rem 0;
+	display: block;
+	overflow: hidden
+}
+
+section.skybab-charms .skybab-charms-txtmain span.point-circle{
+	text-emphasis-style: double-circle;
+	text-emphasis-position: over;
+}
+
+section.skybab-charms .skybab-charms-box{
+	position: relative;
+	width: 100%;
+	padding: 1rem 1rem 1rem 12rem;
+	display: block;
+	overflow: hidden;
+	background: #000;
+	min-height: 11.875rem;
+	margin-bottom: 3.5625rem
+}
+
+section.skybab-charms .skybab-charms-box img{
+	position: absolute;
+	left: 1rem;
+	width: 10rem;
+	height: 10rem
+}
+
+section.skybab-charms .skybab-charms-box p{
+	font-size: 1.7rem;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 1rem;
+}
+section.skybab-charms .skybab-charms-box span{
+	font-size: 1.3rem;
+	color: #fff
+}
+
+section.skybab-charms .charms-skyblue{
+	background: #199ED9
+}
+
+section.skybab-charms .charms-blue{
+	background: #00288D
+}
+
+section.skybab-charms .charms-purple{
+	background: #9200CF
+}
+
+
+
+
+section.skybab-skyview{
+	padding: 0 0.98rem;
+	text-align: center
+}
+
+
+section.skybab-skyview .skybab-skyview-txtmain{
+	position: relative;
+	width: 100%;
+	font-size: 3.437rem;
+	font-weight: 700;
+	color: #00288D;
+	width: 100%;
+	text-align: center;
+	margin: 5rem 0 2rem 0;
+	display: block;
+	overflow: hidden
+}
+
+section.skybab-skyview .skybab-skyview-txtmain span.point-circle{
+	text-emphasis-style: double-circle;
+	text-emphasis-position: over;
+}
+
+section.skybab-skyview .skybab-skyview-point{
+	position: absolute;
+	top: 4.2rem;
+	left: 4rem;
+	padding: 0 1rem;
+	display: block;
+	background: #00288D;
+	border-radius: 20rem;
+	height: 2.562rem;
+	color: #fff;
+	font-size: 1.43rem;
+	font-weight: 900;
+	line-height: 2.562rem;
+		
+}
+.skybab-skyview-photobox{
+	background: #fff;
+	border: 3px  dashed #00288D;
+	padding: 0.5rem;
+	box-sizing: border-box
+}
+
+.skybab-skyview-txt{
+	position: relative;
+	text-align: left;
+	font-size: 1.625rem;
+	font-weight: 400;
+	line-height: 2rem;
+	padding: 2rem 2.5rem;
+}
+.skybab-skyview-txt::before{
+	content:  " \"\ ";
+	font-family: "NotoSansKR";
+	font-size: 4.37rem;
+	font-weight: 200;
+	position: absolute;
+	top: 3rem;
+	left: 1rem
+}
+.skybab-skyview-txt::after{
+	content:  " \"\ ";
+	font-family: "NotoSansKR";
+	font-size: 4.37rem;
+	font-weight: 200;
+	position: absolute;
+	bottom: 0rem;
+	right: 1rem
+}
+
+
+section.skybab-coupon{
+	background: #fff;
+	padding: 0 1.6rem
+}
+
+section.skybab-coupon .skybab-coupon-txtmain{
+	position: relative;
+	width: 100%;
+	font-size: 3.437rem;
+	font-weight: 700;
+	color: #00288D;
+	width: 100%;
+	text-align: center;
+	margin: 5rem 0 2rem 0;
+	display: block;
+	overflow: hidden
+}
+
+section.skybab-coupon .skybab-coupon-txtmain span.point-circle{
+	text-emphasis-style: double-circle;
+	text-emphasis-position: over;
+}
+
+
+
+
+/**************04. 기본 작업 class *************/
+.after {
+	content: "";
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.bld {
+	display: none;
+}
