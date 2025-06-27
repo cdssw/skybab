@@ -194,29 +194,6 @@ button{
 /**************02. 구조 *************/
 
 
-@media (min-width: 768px) {
-	html {
-		font-size: 16px
-	}
-
-	.menu-btn {
-		display: none !important
-	}
-
-	.main-menu {
-		display: block !important
-	}
-
-	.mobile-menu {
-		display: none !important;
-		transition: right 0.3s ease;
-
-	}
-
-	.pop-mask {
-		display: none !important
-	}
-}
 
 header {
 	width: 100%;
@@ -860,4 +837,37 @@ border:0 ;
 
 .bld {
 	display: none;
+}
+
+
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px
+	}
+
+	.menu-btn {
+		display: none !important
+	}
+
+	.main-menu {
+		display: block !important
+	}
+
+	.mobile-menu {
+		display: none !important;
+		transition: right 0.3s ease;
+
+	}
+
+	.pop-mask {
+		display: none !important
+	}
+}
+/*모바일 : -479px*/
+@media all and (max-width:479px){
+	html {
+		zoom:80%
+	}
+	
 }
