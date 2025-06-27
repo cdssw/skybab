@@ -780,49 +780,103 @@ footer strong {
 
 /***팝업***/
 .popup-mask {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 .popup-coupon {
-  position: fixed;
-  top: 10%; left: 10%;
-  transform: translate(-10%, -10%);
-  background: white;
-  padding: 2rem 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  z-index: 1001;
-  text-align: center;
-  width: 90%;
-  min-width: 800px;
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	background: white;
+	padding: 2rem 1.5rem;
+	border-radius: 0;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+	z-index: 1001;
+	text-align: center;
+	width: calc(100% - 4rem);
+	height: 90%
 }
 
 .popup-content {
-  position: relative;
+	position: relative;
+}
+
+.popup-content p strong {
+	font-size: 3.125rem;
+	font-weight: 900
 }
 
 .popup-content p {
-  margin: 1rem 0;
+	margin: 1rem 0;
+	font-size: 1.75rem;
+	margin-top: 3rem
 }
 
 /* 닫기 버튼 */
 .popup-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-border:0 ;
-  background: url(../img/close.svg) no-repeat center center;
-  cursor: pointer;
+	position: absolute;
+	top: -1rem;
+	right: 1rem;
+	border: 0;
+	background: url(../img/close.svg) no-repeat center center;
+	cursor: pointer;
+	background-size: 2rem;
+    width: 2rem;
+    height: 2rem
 }
+
+.div-pinkcouponbox{
+	background: #FB2EAC;
+	text-align: center;
+	padding: 2rem;
+	height: 40rem;
+	margin-top: 5rem;
+	text-align: center
+}
+.div-pinkcouponbox p.pinkcouponbox-title{
+	color:#FFFF00;
+	font-size: 3.125rem;
+	font-weight: 700;
+	margin-bottom: 2rem
+}
+.div-pinkcouponbox .line{
+	display: block;
+	width: 100%;
+	border-top: 2px dashed #fff
+}
+
+.div-pinkcouponbox p.pinkcouponbox-big{
+	color: #fff;
+	font-size: 9.846rem;
+	font-weight: 700
+}
+
+.div-pinkcouponbox .pinkcouponbox-yell{
+	color: #FFFF00;
+	font-weight: 200;
+	font-size: 5rem;
+	margin-top: -3rem
+}
+
+
 
 /**************04. 기본 작업 class *************/
 
 .point-red {
 	color: #C82527
+}
+.point-pink {
+	color: #FB2EAC
+}
+
+.point-yellow{
+	color: #FFFF00
 }
 
 
