@@ -163,7 +163,7 @@
 				<dt>주차안내</dt>
 				<dd>용인 CGV 건물 주차장 (3시간 무료)</dd>
 			</dl>
-			<button type="button" class="fade-line">네이버 지도로 보기</button>
+			<button type="button" class="fade-line" id="btnNaverMap">네이버 지도로 보기</button>
 		</section>
 
 	</main>
@@ -176,7 +176,9 @@
 	</footer>
 
 	<script>
-
+	$("#btnNaverMap").click(function(e) {
+		window.open("https://map.naver.com/p/search/%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B0%A5/place/1925072361?placePath=/home?entry=pll&from=nx&fromNxList=true&fromPanelNum=2&timestamp=202506301610&locale=ko&svcName=map_pcv5&searchText=%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B0%A5&searchType=place&c=15.00,0,0,0,dh");
+	});
 	</script>
 
 	<div class="popup-coupon" style="display:none;">
