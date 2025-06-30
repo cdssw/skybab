@@ -963,7 +963,7 @@ footer strong {
 	}
 }
 
-/*모바일 : -479px*/
+/*모바일 : -479px*
 @media screen and (max-width: 470px) {
 	html {
 		font-size: 10px
@@ -1145,4 +1145,4 @@ footer strong {
 	.popup-content p {
 		font-size: 1.25rem
 	}
-}
+}****/
