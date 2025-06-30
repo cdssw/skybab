@@ -964,7 +964,7 @@ footer strong {
 }
 
 /*모바일 : -479px*/
-@media all and (max-width:320px) {
+@media all and (max-width:479px) {
 	html {
 		font-size: 10px
 	}
