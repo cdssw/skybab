@@ -838,7 +838,8 @@ footer strong {
 	z-index: 1001;
 	text-align: center;
 	width: calc(100% - 4rem);
-	/*	height: calc(100% - 4rem);*/
+	max-height: 90vh;
+	overflow-y: auto;
 }
 
 .popup-content {
