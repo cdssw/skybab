@@ -177,20 +177,21 @@ a {
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-tap-highlight-color: transparent;
-    color: inherit;
+	color: inherit;
 }
 
 a:hover,
 a:link,
-a:visited{
+a:visited {
 	text-decoration: none;
 }
 
 
 
-button{
+button {
 	cursor: pointer
 }
+
 /**************02. 구조 *************/
 
 
@@ -227,7 +228,7 @@ nav .h1 {
 	font-size: 2.0rem;
 	line-height: 1.75rem;
 	font-weight: 700;
-	color: #992626
+	color: #00288D
 }
 
 .main-menu {
@@ -352,26 +353,28 @@ section {
 
 
 section-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease;
-  visibility: hidden;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 1s ease;
+	visibility: hidden;
 }
+
 .section-visible {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
 }
 
 /* 내부 요소 line 순차 fade */
 .fade-line {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.8s ease;
 }
+
 .fade-line.visible {
-  opacity: 1;
-  transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 section.skybab-index {
@@ -382,11 +385,13 @@ section.skybab-index {
 	text-align: center;
 	overflow: hidden
 }
-#bg-rotate{
+
+#bg-rotate {
 	background-image: url(../img/skybab-p01.png);
 	background-size: cover;
 	background-position: center
 }
+
 section.skybab-index .div-bg {
 	width: 100%;
 	background-image: url(../img/skybab-bg.png);
@@ -519,6 +524,36 @@ section.skybab-charms .charms-blue {
 	background: #00288D
 }
 
+section.skybab-charms .skybab-charms-box .skybab-charms-img {
+	position: absolute;
+	left: 1rem;
+	top: 1rem;
+	width: 10rem;
+	height: 10rem;
+	background-size: cover;
+	background-position: center center
+}
+
+section.skybab-charms .skybab-charms-box.charms-skyblue .skybab-charms-img {
+	background: url(../img/skybab-charms-p01.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+section.skybab-charms .skybab-charms-box.charms-purple .skybab-charms-img {
+	background: url(../img/skybab-charms-p03.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+section.skybab-charms .skybab-charms-box.charms-blue .skybab-charms-img {
+	background: url(../img/skybab-charms-p02.png) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	right: 1rem;
+	left: auto
+}
+
 section.skybab-charms .skybab-charms-box.charms-blue {
 	padding: 1rem 12rem 1rem 3rem;
 }
@@ -603,7 +638,7 @@ section.skybab-skyview .skybab-skyview-txt::before {
 	left: 1rem;
 	width: 2.5rem;
 	height: 2.5rem;
-	background: url(../img/mark-start.png) no-repeat  center center;
+	background: url(../img/mark-start.png) no-repeat center center;
 	background-size: 2.5rem
 }
 
@@ -614,7 +649,7 @@ section.skybab-skyview .skybab-skyview-txt::after {
 	right: 1rem;
 	width: 2.5rem;
 	height: 2.5rem;
-	background: url(../img/mark-end.png) no-repeat  center center;
+	background: url(../img/mark-end.png) no-repeat center center;
 	background-size: 2.5rem
 }
 
@@ -643,7 +678,7 @@ section.skybab-coupon .skybab-coupon-txtmain span.point-circle {
 
 section.skybab-coupon .skybab-coupon-box {
 	position: relative;
-/*	border: 0.0625rem solid #AFAFAF;*/
+	/*	border: 0.0625rem solid #AFAFAF;*/
 	min-height: 15rem;
 	padding: 2rem;
 	margin-bottom: 1rem;
@@ -675,20 +710,22 @@ section.skybab-coupon .skybab-coupon-img {
 	width: 7.2rem;
 	height: 100%;
 	background: url(../img/skybab-coupon-bg.png) no-repeat left center;
-	background-size:contain;
+	background-size: contain;
 }
-section.skybab-coupon .skybab-coupon-img img{
+
+section.skybab-coupon .skybab-coupon-img img {
 	width: 65%;
 	margin: 4rem 0 0 2.2rem;
 	vertical-align: middle
 }
+
 section.skybab-coupon .skybab-coupon-img.txt {
 	font-size: 1.35rem;
 	color: #0F3FB9;
 	text-align: center;
 	letter-spacing: -0.15rem;
 	padding: 5rem 0.5rem 0 2rem;
-	font-weight:700;
+	font-weight: 700;
 	cursor: pointer
 }
 
@@ -719,7 +756,7 @@ section.skybab-map dl {
 }
 
 section.skybab-map dl dt {
-	width: 15%;
+	width: 20%;
 	position: relative;
 	font-size: 1.375rem;
 	font-weight: 900;
@@ -734,14 +771,15 @@ section.skybab-map dl dt::after {
 }
 
 section.skybab-map dl dd {
-	width: 80%;
+	width: 78%;
 	font-size: 1.375rem;
 	line-height: 1.5rem;
 	display: inline-block;
 	float: right;
 	text-align: left
 }
-section.skybab-map dl:last-child{
+
+section.skybab-map dl:last-child {
 	margin-bottom: 50rem
 }
 
@@ -800,7 +838,7 @@ footer strong {
 	z-index: 1001;
 	text-align: center;
 	width: calc(100% - 4rem);
-	height: 90%
+	/*	height: calc(100% - 4rem);*/
 }
 
 .popup-content {
@@ -827,37 +865,39 @@ footer strong {
 	background: url(../img/close.svg) no-repeat center center;
 	cursor: pointer;
 	background-size: 2rem;
-    width: 2rem;
-    height: 2rem
+	width: 2rem;
+	height: 2rem
 }
 
-.div-pinkcouponbox{
+.div-pinkcouponbox {
 	background: #FB2EAC;
 	text-align: center;
 	padding: 2rem;
 	height: 40rem;
-	margin-top: 5rem;
-	text-align: center
+	margin: 5rem 0;
+	text-align: center;
 }
-.div-pinkcouponbox p.pinkcouponbox-title{
-	color:#FFFF00;
+
+.div-pinkcouponbox p.pinkcouponbox-title {
+	color: #FFFF00;
 	font-size: 3.125rem;
 	font-weight: 700;
 	margin-bottom: 2rem
 }
-.div-pinkcouponbox .line{
+
+.div-pinkcouponbox .line {
 	display: block;
 	width: 100%;
 	border-top: 2px dashed #fff
 }
 
-.div-pinkcouponbox p.pinkcouponbox-big{
+.div-pinkcouponbox p.pinkcouponbox-big {
 	color: #fff;
 	font-size: 9.846rem;
 	font-weight: 700
 }
 
-.div-pinkcouponbox .pinkcouponbox-yell{
+.div-pinkcouponbox .pinkcouponbox-yell {
 	color: #FFFF00;
 	font-weight: 200;
 	font-size: 5rem;
@@ -871,11 +911,12 @@ footer strong {
 .point-red {
 	color: #C82527
 }
+
 .point-pink {
 	color: #FB2EAC
 }
 
-.point-yellow{
+.point-yellow {
 	color: #FFFF00
 }
 
@@ -892,6 +933,9 @@ footer strong {
 .bld {
 	display: none;
 }
+
+
+
 
 
 
@@ -918,10 +962,189 @@ footer strong {
 		display: none !important
 	}
 }
+
 /*모바일 : -479px*/
-@media all and (max-width:479px){
+@media all and (max-width:479px) {
 	html {
-		zoom:80%
+		font-size: 10px
 	}
-	
+
+	.container {
+		width: 100%;
+		min-width: 320px;
+		max-width: 767px;
+	}
+
+	section {
+		height: 56rem
+	}
+
+	section.skybab-index .div-bg {
+		background-size: contain;
+		height: 32rem
+	}
+
+	section.skybab-index .skybab-index-txtpoint {
+		top: 10.3rem;
+		font-size: 1.25rem;
+		background-size: 3rem;
+		left: 2.0em;
+		padding-left: 3.2rem;
+		height: 3rem;
+	}
+
+	section.skybab-index .skybab-index-txtmain {
+		top: 14rem;
+		font-size: 2rem;
+		text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+		line-height: 1.6rem
+	}
+
+	section.skybab-index .skybab-index-txtmain span {
+		font-size: 2.25rem;
+		display: block;
+		margin-top: 1.2rem;
+		letter-spacing: -0.2rem
+	}
+
+	section.skybab-index .skybab-index-txtsub {
+		font-size: 1.4rem;
+		top: 23rem
+	}
+
+	section.skybab-index button {
+		height: 5rem;
+		width: 21rem;
+		font-size: 2rem;
+		margin-top: 28rem
+	}
+
+	section.skybab-charms .skybab-charms-txtmain,
+	section.skybab-coupon .skybab-coupon-txtmain,
+	section.skybab-map .skybab-map-txtmain,
+	section.skybab-skyview .skybab-skyview-txtmain {
+		font-size: 1.87rem;
+		padding: 1.8rem 0 1rem 0;
+	}
+
+	section.skybab-charms .skybab-charms-box {
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	section.skybab-charms .skybab-charms-box img {
+		height: 6rem;
+		width: 100%;
+		left: 0 !important;
+		top: 0 !important;
+		background-size: cover;
+		position: relative !important;
+	}
+
+	section.skybab-charms .skybab-charms-box p {
+		margin-bottom: 0;
+		font-size: 1.5rem
+	}
+
+	section.skybab-charms .skybab-charms-box span {
+		font-size: 1.125rem;
+		line-height: 1rem
+	}
+
+	section.skybab-charms .skybab-charms-box.charms-blue {
+		padding: 1rem
+	}
+
+	section.skybab-skyview .skybab-skyview-txtmain,
+	section.skybab-coupon .skybab-coupon-txtmain {
+		padding: 3rem 0 2rem 0;
+	}
+
+	section.skybab-skyview .skybab-skyview-point {
+		top: 2rem;
+		left: 5rem;
+		font-size: 1rem;
+		height: 1.875rem;
+		line-height: 1.5rem
+	}
+
+	section.skybab-skyview .skybab-skyview-txt::before,
+	section.skybab-skyview .skybab-skyview-txt::after {
+		background-size: 1.5rem
+	}
+
+	section.skybab-skyview .skybab-skyview-txt {
+		font: 1.125rem
+	}
+
+	section.skybab-coupon .skybab-coupon-img {
+		background: none;
+		display: none
+	}
+
+	section.skybab-coupon .skybab-coupon-txttitle {
+		width: 90%;
+		height: 2.312rem;
+		font-size: 1.125rem;
+		margin: 0 1rem
+	}
+
+	section.skybab-coupon .skybab-coupon-txt {
+		font-size: 1.125rem
+	}
+
+	section.skybab-coupon .skybab-coupon-box {
+		padding: 2rem 0 0 0;
+		min-height: 10rem;
+		margin-bottom: 2rem
+	}
+
+	section.skybab-coupon .skybab-coupon-img.txt {
+		display: block;
+		position: relative;
+		padding: 1rem 0 2rem 0;
+		font-size: 1.875rem;
+		width: 100%;
+		border-top: 1px dashed #ccc
+	}
+
+	section.skybab-charms .skybab-charms-box .skybab-charms-img{
+		position: relative;
+		width: 100%;
+		height: 6.25rem;
+		left: 0;
+		right: 0!important;
+		top:0;
+		margin-bottom: 1rem
+	}
+	section.skybab-charms .skybab-charms-box.charms-skyblue .skybab-charms-img{
+		background-position: center -130px;
+	}
+	section.skybab-charms .skybab-charms-box.charms-blue .skybab-charms-img{
+		background-position: center -150px;
+	}
+	section.skybab-charms .skybab-charms-box.charms-purple .skybab-charms-img {
+		background-position: center -100px;
+	}
+
+	section.skybab-map dl {
+		margin-top: 1rem
+	}
+
+	section.skybab-map dl dt {
+		width: 30%;
+
+	}
+
+	section.skybab-map dl dd {
+		width: 70%;
+	}
+
+	.popup-content p strong {
+		font-size: 1.87rem;
+	}
+
+	.popup-content p {
+		font-size: 1.25rem
+	}
 }
