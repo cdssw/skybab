@@ -379,7 +379,7 @@ section.skybab-index {
 }
 section.skybab-index .div-bg01 {
 	background: url(../img/skybab-index01.png);
-	height: 100vh;
+	height: calc( 100vh - 5.25rem);
 	background-repeat: no-repeat;
 	background-repeat: no-repeat;
 	background-position: bottom center;
@@ -507,7 +507,7 @@ section.skybab-charms .skybab-charms-box {
 	overflow: hidden;
 	background: #000;
 	min-height: 11.875rem;
-	margin-bottom: 3.5625rem
+	margin-bottom: 2rem
 }
 
 section.skybab-charms .skybab-charms-box img {
@@ -529,9 +529,9 @@ section.skybab-charms .skybab-charms-box p {
 }
 
 section.skybab-charms .skybab-charms-box span {
-	font-size: 1.125rem;
+	font-size: 1.35rem;
 	color: #fff;
-	letter-spacing: -0.1rem
+	letter-spacing: -0.05rem
 }
 
 section.skybab-charms .charms-skyblue {
@@ -646,7 +646,7 @@ section.skybab-skyview .skybab-skyview-txt {
 	font-size: 1.625rem;
 	font-weight: 400;
 	line-height: 2rem;
-	padding: 2rem 4rem;
+	padding: 2rem 4rem 6rem 2rem;
 }
 
 section.skybab-skyview .skybab-skyview-txt::before {
