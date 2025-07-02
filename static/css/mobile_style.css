@@ -646,7 +646,7 @@ section.skybab-skyview .skybab-skyview-txt {
 	font-size: 1.625rem;
 	font-weight: 400;
 	line-height: 2rem;
-	padding: 2rem 4rem 6rem 2rem;
+	padding: 2rem 2rem 6rem 4rem;
 }
 
 section.skybab-skyview .skybab-skyview-txt::before {
@@ -663,7 +663,7 @@ section.skybab-skyview .skybab-skyview-txt::before {
 section.skybab-skyview .skybab-skyview-txt::after {
 	content: "";
 	position: absolute;
-	bottom: 1.5rem;
+	bottom: 5rem;
 	right: 1rem;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -804,7 +804,7 @@ section.skybab-map dl:last-child {
 
 section.skybab-map button {
 	text-align: center;
-	margin-top: 10rem;
+	margin-top: 5rem;
 	color: #fff;
 	font-size: 1.7rem;
 	font-weight: 900;
@@ -991,6 +991,9 @@ footer strong {
 		min-width: 320px;
 		max-width: 767px;
 	}
+	section.skybab-charms .skybab-charms-box span{
+		letter-spacing: -0.13rem
+	}
 
 	section {
 /*		height: 100vh*/
@@ -999,7 +1002,8 @@ footer strong {
 	section.skybab-coupon .skybab-coupon-txtmain,
 	section.skybab-map .skybab-map-txtmain,
 	section.skybab-skyview .skybab-skyview-txtmain {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
+		letter-spacing: -0.2rem
 	}
 	section.skybab-skyview .skybab-skyview-txt::before,
 	section.skybab-skyview .skybab-skyview-txt::after {
