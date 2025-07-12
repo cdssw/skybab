@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				const lines = entry.target.querySelectorAll('.fade-line');
 				lines.forEach((line, i) => {
-					line.style.transitionDelay = `${i * 0.3}s`;
+					line.style.transitionDelay = `${i * 0.1}s`;
 					line.classList.add("visible");
 				});
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (couponScrollTarget) {
 		couponScrollTarget.addEventListener('click', () => {
 			popup.style.display = 'block';
-			mask.style.display = 'block';
+			//mask.style.display = 'block';
 		});
 	}
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (closeBtn) {
 		closeBtn.addEventListener('click', () => {
 			popup.style.display = 'none';
-			mask.style.display = 'none';
+			//mask.style.display = 'none';
 		});
 	}
 
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const lines = entry.target.querySelectorAll('.fade-line');
         lines.forEach((line, i) => {
-          line.style.transitionDelay = `${i * 0.3}s`;
+          line.style.transitionDelay = `${i * 0.1}s`;
           line.classList.add("visible");
         });
 
