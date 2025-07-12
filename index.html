@@ -1,553 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKY BAB</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<title>스카이밥 | 매일매일 새로운 퓨전 한상차림</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+
+
+	<!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="./css/mobile_style.css" />
+
+	<!-- jquery core js -->
+
+
+	<!-- jquery ui js -->
+	<script src="./js/jquery-2.2.4.min.js"></script>
+	<script src="./js/skybab-ui.js"></script>
+
 </head>
+
 <body>
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>SKY BAB</h1>
-        <p class="subtitle">12층에서 즐기는 프리미엄 한식당</p>
-        <a href="tel:010-2733-7997" class="cta-button">지금 예약하기</a>
-      </div>
-    </section>
+	<div class="pop-mask" style="display: none"></div>
+	<header data-area-id="header" data-area-name="메인 네비게이션" data-area-type="header">
+		<nav class="container">
+			<a href="#" class="h1">스카이밥</a>
+			<div class="main-menu">
+				<a href="#charms">특별한 매력</a>
+				<a href="#benefits">풍성한 선물</a>
+				<a href="#location">오시는 길</a>
+			</div>
+			<a class="menu-btn" href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</nav>
+		<div class="mobile-menu">
+			<a href="#charms">특별한 매력</a>
+			<a href="#benefits">풍성한 선물</a>
+			<a href="#location">오시는 길</a>
+		</div>
+	</header>
+	<main>
+		<!-- 메인 배너 영역 -->
+		<section id="main-banner" class="area container skybab-index section-fade animate-on-scroll"
+		data-area-id="main-banner" data-area-name="메인 배너" data-area-type="main-banner">
+			<div class="div-bg01">
+				<p class="skybab-index-txtpoint fade-line">퓨전레스토랑</p>
+				<p class="skybab-index-txtmain fade-line">
+					매일매일 새로운 퓨전 <span>한상차림,</span><br>스카이밥에서 특별한 점심을!</p>
+				<p class="skybab-index-txtsub fade-line">
+					지금 랜딩페이지를 통해 10% 할인 혜택까지!<br>바쁜 일상 속, 스카이밥이 드리는 최고의 점심을 만나보세요.
+				</p>
+				<button type="button" class="btn-coupon">10% 할인쿠폰 받기</button>
+			</div>
+		</section>
 
-    <!-- Menu Section -->
-    <section class="menu-section">
-      <h2>오늘의 메뉴</h2>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <img src="image/IMG_8024.jpeg" alt="메인 요리" class="menu-image">
-          <div class="menu-content">
-            <h3>메인 요리</h3>
-            <p>한국식 불고기 또는 매일 다른 신선한 요리 제공</p>
-            <span class="price">15,000원</span>
-          </div>
-        </div>
-        <div class="menu-card">
-          <img src="image/IMG_8036.jpeg" alt="반찬" class="menu-image">
-          <div class="menu-content">
-            <h3>반찬</h3>
-            <p>계절별 제철 재료로 매일 새롭게 준비된 반찬</p>
-            <span class="price">10,000원</span>
-          </div>
-=======
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스카이밥 - 용인 중앙동 CGV 12층</title>
-    <meta name="description" content="용인 중앙동 CGV 12층 스카이밥 랜딩 페이지입니다. 맛있는 한 끼를 만나보세요.">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"> <!-- 한국어 폰트 사용 -->
+		<!-- 특별한 매력 영역 -->
+		<section class="area container skybab-charms section-fade animate-on-scroll" id="charms"
+		data-area-id="charms" data-area-name="특별한 매력" data-area-type="charms">
+			<p class="skybab-charms-txtmain fade-line"><span class="point-circle">스카이밥</span>만의 아주 특별한 매력</p>
+			<div class="skybab-charms-box charms-skyblue fade-line">
+				<!--<img src="./img/skybab-charms-p01.png">-->
+				<div class="skybab-charms-img"></div>
+				<p>나만의 한상차림</p>
+				<span>오늘 뭐 먹지? 고민 끝! 매일 신선하게 준비되는<br>
+					다양한 메인 요리와 영양가 있게 구성된 <br>
+					'퓨전 맞춤 한상'을 즐겨보세요!
+				</span>
+			</div>
+			<div class="skybab-charms-box charms-blue fade-line">
+				<!--<img src="./img/skybab-charms-p02.png">-->
+				<div class="skybab-charms-img"></div>
+				<p>매일 바뀌는 메뉴</p>
+				<span>지루할 틈 없는 미식 경험! 스카이밥은 매일 <br>
+					새로운 메뉴로 여러분을 기다립니다. <br>
+					오늘은 또 어떤 메뉴가 준비되어 있을까요?<br>
+				</span>
+			</div>
+			<div class="skybab-charms-box charms-purple fade-line">
+				<!--<img src="./img/skybab-charms-p03.png">-->
+				<div class="skybab-charms-img"></div>
+				<p>즉석요리 & 무한리필</p>
+				<span>맛있는 철판요리의 감동! <br>
+					모든 반찬은 눈치 보지 말고 마음껏 리필하세요. <br>
+					넉넉한 인심은 덤!
+				</span>
+			</div>
+		</section>
 
-    <!-- 방문자 수 집계를 위한 구글 애널리틱스 또는 다른 서비스 코드를 여기에 삽입합니다. -->
-    <!-- 예: Google Analytics 4 (GA4) 태그 시작 -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script> -->
-    <!-- <script> -->
-    <!--   window.dataLayer = window.dataLayer || []; -->
-    <!--   function gtag(){dataLayer.push(arguments);} -->
-    <!--   gtag('js', new Date()); -->
-    <!--   gtag('config', 'YOUR_GA_MEASUREMENT_ID'); // 'YOUR_GA_MEASUREMENT_ID'를 실제 GA 측정 ID로 교체하세요. -->
-    <!-- </script> -->
-    <!-- GA4 태그 끝 -->
+		<!-- 스카이밥 소개 영역 -->
+		<section class="area container skybab-skyview section-fade animate-on-scroll"
+		data-area-id="skyview" data-area-name="스카이밥 소개" data-area-type="skyview">
+			<span class="skybab-skyview-point fade-line">여기가 밥집? 아니면 예쁜 카페?</span>
+			<p class="skybab-skyview-txtmain fade-line">도심 속 작은 쉼표, <span class="point-circle">스카이밥</span></p>
+			<div class="skybab-skyview-photobox fade-line">
+				<img src="./img/skybab-skyview.png">
+			</div>
+			<div class="skybab-skyview-txt fade-line">
+				딱딱한 식당 분위기는 이제 안녕!<br>
+				스카이밥은 편안하고 <br>
+				아늑한 카페 스타일의 공간에서 <br>
+				특별한 식사를 즐길 수 있도록 <br>
+				준비했습니다.<br>
+				창가 자리에 앉아 탁 트인 스카이뷰를 바라보며 <br>
+				즐기는 점심! <br>
+				맛있는 음식에 <br>
+				아름다운 전망까지, <br>
+				스카이밥에서는 <br>
+				이 모든 것이 무료입니다.
+			</div>
+		</section>
 
-    <style>
-        /* 기본 스타일 초기화 및 폰트 설정 */
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-            scroll-behavior: smooth; /* 부드러운 스크롤 */
-        }
+		<!-- 풍성한 선물 영역 -->
+		<section id="benefits" class="area container skybab-coupon section-fade animate-on-scroll"
+		data-area-id="benefits" data-area-name="풍성한 선물" data-area-type="benefits">
+			<p class="skybab-coupon-txtmain fade-line"><span class="point-circle">스카이밥</span>이 준비한 풍성한 선물 </p>
+			<div class="skybab-coupon-box fade-line">
+				<p class="skybab-coupon-txttitle">랜딩페이지 고객님께만 드리는 10% 할인 쿠폰!</p>
+				<p class="skybab-coupon-txt">이 페이지를 통해 방문하시는 <br>
+					모든 고객님께 감사의 마음을 담아, <span class="point-red">7월 한정</span><br>
+					총 주문 금액의 10%를 할인해 드립니다!</p>
+				<div id="coupon-target" class="skybab-coupon-img txt">10%할인 쿠폰받기</div>
+			</div>
+			<div class="skybab-coupon-box fade-line">
+				<p class="skybab-coupon-txttitle">계절마다 찾아오는 깜짝 베네핏!</p>
+				<p class="skybab-coupon-txt">더운 여름엔 시원한 <span class="point-red">아이스 아메리카노</span> 무료 제공!<br>
+					겨울에는 따끈한 <span class="point-red">누룽지 or 죽</span> 제공!</p>
+				<div class="skybab-coupon-img">
+					<img src="./img/skybab-coupon-02.png">
+				</div>
+			</div>
+			<div class="skybab-coupon-box fade-line">
+				<p class="skybab-coupon-txttitle">자주 오실수록 이득! 단골 고객 보너스 식권!</p>
+				<p class="skybab-coupon-txt">
+					10장 구매시 + 1장 = 11장<br>
+					20장 구매시 + 3장 = 23장<br>
+					30장 구매시 + 5장 = 35장<br>
+					50장 구매시 + 10장 = 60장
+				</p>
+				<div class="skybab-coupon-img fade-line">
+					<img src="./img/skybab-coupon-03.png">
+				</div>
+			</div>
+		</section>
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
+		<!-- 오시는 길 영역 -->
+		<section  id="location" class="area container skybab-map section-fade animate-on-scroll"
+		data-area-id="location" data-area-name="오시는 길" data-area-type="location">
+			<p class="skybab-map-txtmain fade-line">오시는 길</p>
+			<dl class="fade-line">
+				<dt>상호</dt>
+				<dd>스카이밥 (퓨전 한상 차림)</dd>
+			</dl>
+			<dl class="fade-line">
+				<dt>주소</dt>
+				<dd>경기 용인시 처인구 금령로 86 1204호<br>(용인 CGV건물)</dd>
+			</dl>
+			<dl class="fade-line">
+				<dt>연락처</dt>
+				<dd>0507-1327-9717</dd>
+			</dl>
+			<dl class="fade-line">
+				<dt>영업시간</dt>
+				<dd>평일 점심 (11:00-15:00)<br>재료 소진시 조기 마감<br><span class="point-red">※ 주말/공휴일 휴무</span></dd>
+			</dl>
+			<dl class="fade-line">
+				<dt>주차안내</dt>
+				<dd>용인 CGV 건물 주차장 (3시간 무료)</dd>
+			</dl>
+			<button type="button" class="fade-line" id="btnNaverMap">네이버 지도로 보기</button>
+		</section>
 
-        /* 헤더 */
-        header {
-            background: #ffffff;
-            color: #333;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            text-align: center;
-            position: sticky; /* 스크롤 시 상단 고정 */
-            top: 0;
-            z-index: 1000; /* 다른 요소 위에 표시 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+	</main>
+	<footer class="area" data-area-id="footer" data-area-name="푸터" data-area-type="footer">
+		<strong>스카이밥</strong>
+		<p>대표자: 장영민 <br> 주소: 경기도 용인시 처인구 금령로 86 1204호(용인 CGV건물)
+			<br> 연락처:0507-1327-9717</p>
+		
+		<p>@2025 스카이밥. All rights reserved</p>
+	</footer>
 
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-            color: #555;
-        }
+	<script>
+	$("#btnNaverMap").click(function(e) {
+		window.open("https://map.naver.com/p/search/%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B0%A5/place/1925072361?placePath=/home?entry=pll&from=nx&fromNxList=true&fromPanelNum=2&timestamp=202506301610&locale=ko&svcName=map_pcv5&searchText=%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B0%A5&searchType=place&c=15.00,0,0,0,dh");
+	});
+	</script>
 
-        header p {
-            margin-top: 5px;
-            font-size: 1.1em;
-            color: #777;
-        }
-
-        /* 히어로 섹션 */
-        .hero-section {
-            background: url('[대표 이미지 URL]') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            display: flex; /* 중앙 정렬을 위해 flex 사용 */
-            align-items: center;
-            justify-content: center;
-            min-height: 600px; /* 최소 높이 설정 */
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* 이미지 위에 어둡게 오버레이 */
-        }
-
-        .hero-section .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-section h2 {
-            margin: 0;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 */
-        }
-
-        .hero-section p {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #ff6600; /* CTA 버튼 색상 */
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease; /* 호버 효과 */
-        }
-
-        .cta-button:hover {
-            background-color: #e65c00;
-        }
-
-        /* 일반 섹션 */
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            opacity: 0; /* 초기에는 투명하게 */
-            transform: translateY(50px); /* 초기에는 아래로 이동 */
-            transition: opacity 1s ease-out, transform 1s ease-out; /* 애니메이션 효과 */
-        }
-
-        .section.is-visible {
-            opacity: 1; /* 스크롤 시 나타나게 */
-            transform: translateY(0);
-        }
-
-        .section:nth-child(odd) { background-color: #ffffff; }
-        .section:nth-child(even) { background-color: #f0f0f0; }
-
-        .section h2 {
-            color: #555;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section h2::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: #ff6600;
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-        }
-
-        .section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .section img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* 메뉴 갤러리 */
-        .menu-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 카드 크기 조정 */
-            gap: 30px; /* 카드 간 간격 */
-            margin-top: 40px;
-        }
-
-        .menu-item {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* 그림자 효과 강화 */
-            text-align: left;
-            transition: transform 0.3s ease-in-out; /* 호버 애니메이션 */
-        }
-
-        .menu-item:hover {
-            transform: translateY(-10px); /* 호버 시 위로 살짝 이동 */
-        }
-
-        .menu-item img {
-            width: 100%;
-            height: 200px; /* 이미지 높이 고정 */
-            object-fit: cover; /* 이미지 비율 유지하면서 채우기 */
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .menu-item h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.4em;
-            color: #333;
-        }
-
-        .menu-item p {
-            margin: 0;
-            color: #666;
-            font-size: 1.1em;
-        }
-
-        /* 연락처 정보 */
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px; /* 항목 간 간격 */
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            text-align: center;
-            flex: 1 1 300px; /* 유연한 너비 설정 */
-            max-width: 350px; /* 최대 너비 제한 */
-        }
-
-        .contact-item h3 {
-            margin-top: 0;
-            color: #555;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .contact-item p {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .contact-item a {
-            color: #ff6600;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* 푸터 */
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 20px;
-                min-height: 400px;
-            }
-            .hero-section h2 {
-                font-size: 2.5em;
-            }
-            .hero-section p {
-                font-size: 1.3em;
-            }
-
-            .section {
-                padding: 40px 10px;
-            }
-            .section h2 {
-                font-size: 2em;
-            }
-             .section p {
-                font-size: 1em;
-            }
-
-            .menu-gallery {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-            }
-
-            .contact-info {
-                flex-direction: column; /* 세로로 배치 */
-                gap: 20px;
-            }
-
-             .contact-item {
-                 max-width: 100%; /* 모바일에서 너비 꽉 채우기 */
-             }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <h1>스카이밥</h1>
-            <p>용인 중앙동 CGV 12층, 맛있는 한 끼</p>
-            <!-- 전화번호 등 연락처 정보를 상단에 추가할 수 있습니다. -->
-            <!-- <p>문의: [스카이밥 전화번호]</p> -->
-        </div>
-    </header>
-
-    <section class="hero-section">
-        <div class="container">
-            <h2>[스카이밥 대표 문구]</h2>
-            <p>[식당의 매력을 어필하는 짧은 설명]</p>
-            <a href="#contact" class="cta-button">방문 안내 & 문의</a> <!-- CTA 버튼 추가 -->
->>>>>>> 5aef36a3158c4085e799e8f97e184eeff7f7f20d
-        </div>
-    </section>
-
-<<<<<<< HEAD
-    <!-- Restaurant Info Section -->
-    <section class="info-section">
-      <h2>식당 정보</h2>
-      <div class="info-container">
-        <div class="info-details">
-          <p>📍 경기 용인시 처인구 금령로 86 1204호</p>
-          <p>⏰ 영업시간: 11:00 ~ 15:00 (14:30 라스트 오더)</p>
-          <p>📞 예약 및 문의: <a href="tel:010-2733-7997">010-2733-7997</a></p>
-        </div>
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.123456789012!2d127.12345678901234!3d37.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDA3JzI0LjQiTiAxMjfCsDA3JzI0LjQiRQ!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr" 
-            width="100%" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why SKY BAB Section -->
-    <section class="features-section">
-      <h2>왜 SKY BAB인가요?</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <i class="fas fa-building"></i>
-          <h3>전망 좋은 12층</h3>
-          <p>눈부신 전망과 함께하는 특별한 식사</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-utensils"></i>
-          <h3>신선한 한상 차림</h3>
-          <p>매일 바뀌는 신선한 메뉴</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-heart"></i>
-          <h3>따뜻한 공간</h3>
-          <p>직장인과 혼밥러 모두 환영</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-      <h2>지금 예약하세요!</h2>
-      <div class="contact-buttons">
-        <a href="tel:0507-1327-9717" class="phone-button">
-          <i class="fas fa-phone"></i>
-          0507-1327-9717
-        </a>
-        <a href="https://instagram.com/skybab_official" class="instagram-button" target="_blank">
-          <i class="fab fa-instagram"></i>
-          @skybab_official
-        </a>
-      </div>
-=======
-    <section class="section">
-        <div class="container">
-            <h2>스카이밥은 어떤 곳인가요?</h2>
-            <p>[스카이밥에 대한 소개 글. 식당의 컨셉, 분위기, 특징 등을 작성해 보세요.]</p>
-            <img src="[스카이밥 내부 또는 외부 사진 URL]" alt="스카이밥 내부">
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2>스카이밥의 맛있는 메뉴</h2>
-            <p>[대표 메뉴 또는 인기 메뉴에 대한 간략한 설명]</p>
-            <div class="menu-gallery">
-                <!-- 메뉴 항목 예시 -->
-                <div class="menu-item">
-                    <img src="[메뉴 이미지 URL 1]" alt="메뉴 이름 1">
-                    <h3>[메뉴 이름 1]</h3>
-                    <p>[메뉴 설명 1]</p>
-                </div>
-                <div class="menu-item">
-                    <img src="[메뉴 이미지 URL 2]" alt="메뉴 이름 2">
-                    <h3>[메뉴 이름 2]</h3>
-                    <p>[메뉴 설명 2]</p>
-                </div>
-                 <div class="menu-item">
-                    <img src="[메뉴 이미지 URL 3]" alt="메뉴 이름 3">
-                    <h3>[메뉴 이름 3]</h3>
-                    <p>[메뉴 설명 3]</p>
-                </div>
-                <!-- 더 많은 메뉴 항목 추가 -->
-            </div>
-            <!-- 전체 메뉴판 링크 등을 추가할 수 있습니다. -->
-            <!-- <p style="margin-top: 30px;"><a href="#menu" style="color:#ff6600; text-decoration:none; font-weight:bold;">전체 메뉴 보기</a></p> -->
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <div class="container">
-            <h2>오시는 길 및 문의</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>주소</h3>
-                    <p>경기도 용인시 처인구 김량장동 CGV 건물 12층</p>
-                    <!-- 네이버 지도, 카카오 지도 링크 또는 약도 이미지 추가 -->
-                    <!-- <img src="[약도 이미지 URL]" alt="오시는 길 약도"> -->
-                    <p><a href="[네이버 지도 링크]" target="_blank">네이버 지도에서 보기</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>영업 시간</h3>
-                    <p>[월요일: 00:00 - 00:00]</p>
-                    <p>[화요일: 00:00 - 00:00]</p>
-                    <p>[... 요일별 시간 ...]</p>
-                    <p>브레이크 타임: [00:00 - 00:00]</p>
-                    <p>정기 휴무: [휴무일]</p>
-                </div>
-                <div class="contact-item">
-                    <h3>문의</h3>
-                    <p>전화: <a href="tel:[스카이밥 전화번호]">[스카이밥 전화번호]</a></p> <!-- 전화 걸기 링크 -->
-                    <p>이메일: [이메일 주소 (선택 사항)]</p>
-                    <!-- 예약/문의 양식 또는 링크 추가 -->
-                </div>
-            </div>
-        </div>
->>>>>>> 5aef36a3158c4085e799e8f97e184eeff7f7f20d
-    </section>
-
-<<<<<<< HEAD
-  <!-- Footer -->
-  <footer class="main-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 SKY BAB. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </footer>
-=======
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 스카이밥. All rights reserved.</p>
-            <p><a href="[개인정보처리방침 페이지 URL]">개인정보처리방침</a> | <a href="[이용약관 페이지 URL]">이용약관</a></p>
-        </div>
-    </footer>
-
-    <script>
-        // 스크롤 시 섹션 나타나는 애니메이션
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        // 한 번 나타난 후에는 더 이상 관찰하지 않음
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.3 // 섹션의 30%가 보일 때 애니메이션 실행
+	<!-- 쿠폰 팝업 영역 -->
+	<div class="area popup-coupon" style="display:none;"
+	data-area-id="popup-coupon" data-area-name="쿠폰 팝업" data-area-type="popup-coupon">
+		<div class="popup-content">
+			<button type="button" class="popup-close">×</button>
+			<p><strong>7월 한정이벤트</strong></p>
+			<p>방문 시 이 화면을 직원에게 보여주시면<br>총 금액의 <span class="point-pink">10%</span>를 할인해 드립니다.</p>
+			<div class="div-pinkcouponbox">
+				<p class="pinkcouponbox-title">SKYBAB</p>
+				<span class="line"></span>
+				<p class="pinkcouponbox-big">10%</p>
+				<p class="pinkcouponbox-yell">COUPON</p>
+			</div>
+		</div>
+	</div>
+	<!-- 유저 분석 스크립트 -->
+	<script>
+        // 환경에 따른 스크립트 로드
+        const script = document.createElement('script');
+        script.src = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:8080/js/user-analytics.js'
+            : 'https://whwnddml.github.io/user-behavior-analytics/js/user-analytics.js';
+        
+        // 스크립트 로드 완료 후 초기화
+        script.onload = function() {
+            // UserAnalytics 초기화 (선택적 설정)
+            const analytics = new UserAnalytics({
+                debug: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1', // 로컬에서만 디버그 모드 활성화
+                sendInterval: 30000, // 30초마다 데이터 전송
+                enableHeatmap: true,
+                enableScrollTracking: true,
+                enableFormTracking: true
             });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // 부드러운 스크롤 (앵커 링크 클릭 시)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
+        };
+        
+        document.body.appendChild(script);
     </script>
-
->>>>>>> 5aef36a3158c4085e799e8f97e184eeff7f7f20d
 </body>
-</html> 
+</html>
