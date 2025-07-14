@@ -112,27 +112,70 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
+ $(document).ready(function () {
+    const bgImages = [
+      "../img/skybab-index01.png",
+      "../img/skybab-index02.png",
+      "../img/skybab-index03.png"
+    ];
 
-document.addEventListener("DOMContentLoaded", () => {
+    let currentIndex = 0;
+    const $div = $(".div-bg01");
 
+    // 초기 설정
+    $div.css("background-image", `url(${bgImages[0]})`);
 
-  // 🔁 배경 이미지 순환 기능
-  const bgTarget = document.getElementById("bg-rotate");
-  const bgImages = [
-    "../img/skybab-bg01.png",
-    "../img/skybab-bg02.png",
-    "../img/skybab-bg03.png"
-  ];
-  let current = 0;
+    // 자동 전환
+    let interval = setInterval(nextImage, 3000);
 
-  if (bgTarget) {
-    setInterval(() => {
-      current = (current + 1) % bgImages.length;
-      bgTarget.style.backgroundImage = `url('${bgImages[current]}')`;
-      bgTarget.style.transition = "background-image 0.5s ease-in-out";
-    }, 5000); // 5초마다 전환
-  }
-});
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % bgImages.length;
+      updateBackground();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + bgImages.length) % bgImages.length;
+      updateBackground();
+    }
+
+    function updateBackground() {
+      $div.fadeOut(300, function () {
+        $div.css("background-image", `url(${bgImages[currentIndex]})`);
+        $div.fadeIn(300);
+      });
+    }
+
+    // 모바일 터치 이벤트
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    $div.on("touchstart", function (e) {
+      touchStartX = e.originalEvent.touches[0].clientX;
+    });
+
+    $div.on("touchend", function (e) {
+      touchEndX = e.originalEvent.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+
+      if (Math.abs(deltaX) > 50) {
+        clearInterval(interval); // 유저가 스와이프하면 자동 슬라이드 일시 중지
+
+        if (deltaX > 0) {
+          prevImage();
+        } else {
+          nextImage();
+        }
+
+        // 5초 후 자동 슬라이드 재시작
+        interval = setInterval(nextImage, 3000);
+      }
+    }
+  });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
