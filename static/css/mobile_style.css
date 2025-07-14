@@ -348,12 +348,14 @@ section {
 }
 
 
-section-fade {
+/*
+.section-fade {
 	opacity: 0;
 	transform: translateY(20px);
 	transition: all 1s ease;
 	visibility: hidden;
 }
+*/
 
 .section-visible {
 	opacity: 1;
@@ -377,10 +379,11 @@ section.skybab-index {
 	height: 100vh;
 	margin-top: 5.25rem;
 }
+
+
 section.skybab-index .div-bg01 {
-	background: url(../img/skybab-index01.png);
+	background-image: url(../img/skybab-index01.png);
 	height: calc( 100vh - 5.25rem);
-	background-repeat: no-repeat;
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	background-size: cover;
@@ -414,7 +417,7 @@ section.skybab-index .div-bg {
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	background-size: cover;
-	height: 60vh;
+	height: 100vh;
 }
 
 section.skybab-index .skybab-index-txtpoint {
