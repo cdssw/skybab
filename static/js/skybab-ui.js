@@ -113,71 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
- $(document).ready(function () {
-    const bgImages = [
-      "../img/skybab-index01.png",
-      "../img/skybab-index02.png",
-      "../img/skybab-index03.png"
-    ];
-
-    let currentIndex = 0;
-    const $div = $(".div-bg01");
-
-    // 초기 설정
-    $div.css("background-image", `url(${bgImages[0]})`);
-
-    // 자동 전환
-    let interval = setInterval(nextImage, 3000);
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % bgImages.length;
-      updateBackground();
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + bgImages.length) % bgImages.length;
-      updateBackground();
-    }
-
-    function updateBackground() {
-      $div.fadeOut(300, function () {
-        $div.css("background-image", `url(${bgImages[currentIndex]})`);
-        $div.fadeIn(300);
-      });
-    }
-
-    // 모바일 터치 이벤트
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    $div.on("touchstart", function (e) {
-      touchStartX = e.originalEvent.touches[0].clientX;
-    });
-
-    $div.on("touchend", function (e) {
-      touchEndX = e.originalEvent.changedTouches[0].clientX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      const deltaX = touchEndX - touchStartX;
-
-      if (Math.abs(deltaX) > 50) {
-        clearInterval(interval); // 유저가 스와이프하면 자동 슬라이드 일시 중지
-
-        if (deltaX > 0) {
-          prevImage();
-        } else {
-          nextImage();
-        }
-
-        // 5초 후 자동 슬라이드 재시작
-        interval = setInterval(nextImage, 3000);
-      }
-    }
-  });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -201,4 +136,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.section-fade').forEach(section => {
     sectionObserver.observe(section);
   });
+});
+
+
+
+
+
+
+$(function() {
+  var images = [
+    "../img/skybab-index01.png",
+    "../img/skybab-index02.png",
+    "../img/skybab-index03.png"
+  ];
+  var index = 0;
+
+  setInterval(function() {
+    index = (index + 1) % images.length;
+    $('.div-bg01').css('background-image', 'url(' + images[index] + ')');
+  }, 3000); // 3초마다 변경 (원하는 시간으로 조절)
 });
