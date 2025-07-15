@@ -145,14 +145,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $(function() {
   var images = [
-    "../img/skybab-index01.webp",
-    "../img/skybab-index02.webp",
-    "../img/skybab-index03.webp"
+    "../img/skybab-index01.png",
+    "../img/skybab-index02.png",
+    "../img/skybab-index03.png",
+    "../img/skybab-index04.png"
   ];
   var index = 0;
 
+  $('.div-bg01').css({
+    'background-image': 'url(' + images[index] + ')',
+    'background-size': 'cover'
+  });
+
   setInterval(function() {
     index = (index + 1) % images.length;
-    $('.div-bg01').css('background-image', 'url(' + images[index] + ')');
-  }, 3000); // 3초마다 변경 (원하는 시간으로 조절)
+    $('.div-bg01').fadeOut(500, function() {
+      $(this).css({
+        'background-image': 'url(' + images[index] + ')'
+      }).fadeIn(500);
+    });
+  }, 3000);
 });
