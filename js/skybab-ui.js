@@ -140,10 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $(function() {
   var images = [
-    "./img/skybab-index01.png",
-    "./img/skybab-index02.png",
-    "./img/skybab-index03.png",
-    "./img/skybab-index04.png"
+    "./img/skybab-index01.webp",
+    "./img/skybab-index02.webp",
+    "./img/skybab-index03.webp",
+    "./img/skybab-index04.webp"
   ];
   var index = 0;
 
