@@ -142,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 $(function() {
   var images = [
     "../img/skybab-index01.png",
@@ -152,17 +151,25 @@ $(function() {
   ];
   var index = 0;
 
-  $('.div-bg01').css({
-    'background-image': 'url(' + images[index] + ')',
-    'background-size': 'cover'
-  });
+  // 첫 이미지 세팅
+  $('.bg-layer').eq(0).css('background-image', 'url(' + images[index] + ')');
 
   setInterval(function() {
     index = (index + 1) % images.length;
-    $('.div-bg01').fadeOut(500, function() {
-      $(this).css({
-        'background-image': 'url(' + images[index] + ')'
-      }).fadeIn(500);
-    });
+
+    var $current = $('.bg-layer').eq(0);
+    var $next = $('.bg-layer.next');
+
+    // next 레이어에 새 이미지 설정
+    $next.css('background-image', 'url(' + images[index] + ')');
+
+    // fade in next 레이어
+    $next.css('opacity', 1);
+
+    // 일정 시간 후 현재 레이어에 덮어쓰고 next 다시 숨김
+    setTimeout(function() {
+      $current.css('background-image', 'url(' + images[index] + ')');
+      $next.css('opacity', 0);
+    }, 1000); // transition 시간과 동일
   }, 3000);
 });
