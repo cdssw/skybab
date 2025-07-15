@@ -314,7 +314,7 @@ nav .h1 {
 .mobile-menu {
 	position: fixed;
 	right: -80%;
-	top: 56px;
+	top: 50px;
 	background: #fff;
 	width: 80%;
 	height: 100%;
@@ -417,9 +417,9 @@ section.skybab-index .div-bg {
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: cover;
-	 object-fit:contain;
+    object-fit:contain;
 	height: 100%;
-	 aspect-ratio: 16/9; 
+     aspect-ratio: 16/9; 
 }
 
 section.skybab-index .skybab-index-txtpoint {
@@ -462,7 +462,7 @@ section.skybab-index .skybab-index-txtsub {
 	letter-spacing: -0.15rem;
 	color: #fff;
 	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
-    padding: 0 2vh
+    padding: 0 1vh
 }
 
 section.skybab-index button {
