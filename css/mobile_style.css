@@ -1,67 +1,3 @@
-/***************Noto Sans KR*************/
-@charset "utf-8";
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 100;
-	src: url(./fonts/NotoSanskr/NotoSans-DemiLight.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 200;
-	src: url(./fonts/NotoSanskr/NotoSansKR-ExtraLight.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 300;
-	src: url(./fonts/NotoSanskr/NotoSansKR-Light.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 400;
-	src: url(./fonts/NotoSanskr/NotoSansKR-Regular.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 500;
-	src: url(./fonts/NotoSanskr/NotoSansKR-Medium.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 600;
-	src: url(./fonts/NotoSanskr/NotoSansKR-SemiBold.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 700;
-	src: url(./fonts/NotoSanskr/NotoSansKR-Bold.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 800;
-	src: url(./fonts/NotoSanskr/NotoSansKR-ExtraBold.woff) format("woff");
-}
-
-@font-face {
-	font-family: "NotoSansKR";
-	font-weight: 900;
-	src: url(./fonts/NotoSanskr/NotoSansKR-Black.woff) format("woff");
-}
-
-
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
 
 
 html,
@@ -285,7 +221,7 @@ nav .h1 {
 
 .menu-btn.active span:nth-of-type(1) {
 	-webkit-transform: translateY(10px) rotate(-315deg);
-	transform: translateY(9px) rotate(-315deg);
+	transform: translateY(10px) rotate(-315deg);
 }
 
 .menu-btn.active span:nth-of-type(2) {
@@ -294,7 +230,7 @@ nav .h1 {
 
 .menu-btn.active span:nth-of-type(3) {
 	-webkit-transform: translateY(-10px) rotate(315deg);
-	transform: translateY(-9px) rotate(315deg);
+	transform: translateY(-6px) rotate(315deg);
 }
 
 
@@ -314,7 +250,7 @@ nav .h1 {
 .mobile-menu {
 	position: fixed;
 	right: -80%;
-	top: 56px;
+	top: 50px;
 	background: #fff;
 	width: 80%;
 	height: 100%;
@@ -348,12 +284,14 @@ section {
 }
 
 
-section-fade {
+/*
+.section-fade {
 	opacity: 0;
 	transform: translateY(20px);
 	transition: all 1s ease;
 	visibility: hidden;
 }
+*/
 
 .section-visible {
 	opacity: 1;
@@ -374,18 +312,21 @@ section-fade {
 }
 
 section.skybab-index {
-	height: 100vh;
+	height: calc( 100vh - 5.25rem);
 	margin-top: 5.25rem;
 }
+
+
+
 section.skybab-index .div-bg01 {
-	background: url(../img/skybab-index01.png);
+	background-image: url(../img/skybab-index01.png);
 	height: calc( 100vh - 5.25rem);
-	background-repeat: no-repeat;
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	background-size: cover;
 	text-align: center;
 	overflow: hidden;
+    width: 100%
   }
 
 section.skybab-index .image-container img {
@@ -394,9 +335,21 @@ section.skybab-index .image-container img {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
-    display: none; /* 초기에는 숨김 */
+    object-fit: cover;
+    display: none; 
   }
+
+section.skybab-index .div-bg {
+	width: 100%;
+	background-image: url(../img/skybab-bg.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+    object-fit:contain;
+	height: 100%;
+    position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
 
 section.skybab-index .image-container img:first-child {
     display: block; /* 첫 번째 이미지는 보이도록 설정 */
@@ -406,15 +359,6 @@ section.skybab-index .image-container img:first-child {
 	background-image: url(../img/skybab-p01.png);
 	background-size: cover;
 	background-position: center
-}
-
-section.skybab-index .div-bg {
-	width: 100%;
-	background-image: url(../img/skybab-bg.png);
-	background-repeat: no-repeat;
-	background-position: bottom center;
-	background-size: cover;
-	height: 60vh;
 }
 
 section.skybab-index .skybab-index-txtpoint {
@@ -433,7 +377,7 @@ section.skybab-index .skybab-index-txtpoint {
 
 section.skybab-index .skybab-index-txtmain {
 	position: absolute;
-	top: 20vh;
+	top: 17vh;
 	width: 100%;
 	text-align: center;
 	font-size: 3.125rem;
@@ -454,9 +398,10 @@ section.skybab-index .skybab-index-txtsub {
 	text-align: center;
 	font-size: 1.8rem;
 	font-weight: 500;
-	letter-spacing: -0.1rem;
+	letter-spacing: -0.15rem;
 	color: #fff;
-	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5)
+	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+    padding: 0 1vh
 }
 
 section.skybab-index button {
@@ -522,14 +467,14 @@ section.skybab-charms .skybab-charms-box img::after {
 }
 
 section.skybab-charms .skybab-charms-box p {
-	font-size: 1.7rem;
+	font-size: 1.9rem;
 	font-weight: 700;
 	color: #fff;
-	margin-bottom: 1rem;
+	margin-bottom: 0.9rem;
 }
 
 section.skybab-charms .skybab-charms-box span {
-	font-size: 1.35rem;
+	font-size: 1.4rem;
 	color: #fff;
 	letter-spacing: -0.05rem
 }
@@ -718,7 +663,8 @@ section.skybab-coupon .skybab-coupon-txttitle {
 }
 
 section.skybab-coupon .skybab-coupon-txt {
-	font-size: 1.375rem;
+	font-size: 1.6rem;
+    letter-spacing: -0.1rem
 	padding: 1rem 1rem;
 }
 
@@ -734,7 +680,7 @@ section.skybab-coupon .skybab-coupon-img {
 
 section.skybab-coupon .skybab-coupon-img img {
 	width: 65%;
-	margin: 4rem 0 0 2.2rem;
+	margin: 4rem 0 0 2.05rem;
 	vertical-align: middle
 }
 
@@ -829,7 +775,7 @@ footer {
 }
 
 footer strong {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	line-height: 2.5rem
 }
@@ -1003,7 +949,7 @@ footer strong {
 	section.skybab-coupon .skybab-coupon-txtmain,
 	section.skybab-map .skybab-map-txtmain,
 	section.skybab-skyview .skybab-skyview-txtmain {
-		font-size: 2.8rem;
+		font-size: 2.9rem;
 		letter-spacing: -0.2rem
 	}
 	section.skybab-skyview .skybab-skyview-txt::before,
