@@ -136,3 +136,22 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionObserver.observe(section);
   });
 });
+
+
+$(function() {
+  var images = [
+    "./img/skybab-index01.png",
+    "./img/skybab-index02.png",
+    "./img/skybab-index03.png",
+    "./img/skybab-index04.png"
+  ];
+  var index = 0;
+
+  setInterval(function() {
+    index = (index + 1) % images.length;
+    $('.div-bg01').css({
+      'background-image': 'url(' + images[index] + ')',
+      'background-size': 'cover'  
+    });
+  }, 3000); // 3초마다 변경
+});
