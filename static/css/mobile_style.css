@@ -419,6 +419,7 @@ section.skybab-index .div-bg {
 	background-size: cover;
 	 object-fit:contain;
 	height: 100%;
+	 aspect-ratio: 16/9; 
 }
 
 section.skybab-index .skybab-index-txtpoint {
