@@ -415,7 +415,7 @@ section.skybab-index .div-bg {
 	width: 100%;
 	background-image: url(../img/skybab-bg.png);
 	background-repeat: no-repeat;
-	background-position: bottom center;
+	background-position: top center;
 	background-size: cover;
 	height: 100%;
 }
