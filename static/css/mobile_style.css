@@ -417,7 +417,7 @@ section.skybab-index .div-bg {
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: cover;
-	 object-fit: cover; 
+	 object-fit:contain;
 	height: 100%;
 }
 
