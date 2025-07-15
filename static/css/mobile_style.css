@@ -381,6 +381,7 @@ section.skybab-index {
 }
 
 
+
 section.skybab-index .div-bg01 {
 	background-image: url(../img/skybab-index01.png);
 	height: calc( 100vh - 5.25rem);
@@ -389,6 +390,7 @@ section.skybab-index .div-bg01 {
 	background-size: cover;
 	text-align: center;
 	overflow: hidden;
+    width: 100%
   }
 
 section.skybab-index .image-container img {
@@ -397,19 +399,9 @@ section.skybab-index .image-container img {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
-    display: none; /* 초기에는 숨김 */
+    object-fit: cover;
+    display: none; 
   }
-
-section.skybab-index .image-container img:first-child {
-    display: block; /* 첫 번째 이미지는 보이도록 설정 */
-  }
-
-#bg-rotate {
-	background-image: url(../img/skybab-p01.png);
-	background-size: cover;
-	background-position: center
-}
 
 section.skybab-index .div-bg {
 	width: 100%;
@@ -419,7 +411,18 @@ section.skybab-index .div-bg {
 	background-size: cover;
     object-fit:contain;
 	height: 100%;
-     aspect-ratio: 16/9; 
+    position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+section.skybab-index .image-container img:first-child {
+    display: block; /* 첫 번째 이미지는 보이도록 설정 */
+  }
+
+#bg-rotate {
+	background-image: url(../img/skybab-p01.png);
+	background-size: cover;
+	background-position: center
 }
 
 section.skybab-index .skybab-index-txtpoint {
@@ -438,7 +441,7 @@ section.skybab-index .skybab-index-txtpoint {
 
 section.skybab-index .skybab-index-txtmain {
 	position: absolute;
-	top: 20vh;
+	top: 17vh;
 	width: 100%;
 	text-align: center;
 	font-size: 3.125rem;
