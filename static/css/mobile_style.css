@@ -376,7 +376,7 @@ section {
 }
 
 section.skybab-index {
-	height: 100vh;
+	height: calc( 100vh - 5.25rem);
 	margin-top: 5.25rem;
 }
 
@@ -459,7 +459,8 @@ section.skybab-index .skybab-index-txtsub {
 	font-weight: 500;
 	letter-spacing: -0.1rem;
 	color: #fff;
-	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5)
+	text-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+    padding: 0 2vh
 }
 
 section.skybab-index button {
@@ -525,14 +526,14 @@ section.skybab-charms .skybab-charms-box img::after {
 }
 
 section.skybab-charms .skybab-charms-box p {
-	font-size: 1.7rem;
+	font-size: 1.9rem;
 	font-weight: 700;
 	color: #fff;
-	margin-bottom: 1rem;
+	margin-bottom: 0.9rem;
 }
 
 section.skybab-charms .skybab-charms-box span {
-	font-size: 1.35rem;
+	font-size: 1.4rem;
 	color: #fff;
 	letter-spacing: -0.05rem
 }
@@ -721,7 +722,7 @@ section.skybab-coupon .skybab-coupon-txttitle {
 }
 
 section.skybab-coupon .skybab-coupon-txt {
-	font-size: 1.375rem;
+	font-size: 1.5rem;
 	padding: 1rem 1rem;
 }
 
@@ -737,7 +738,7 @@ section.skybab-coupon .skybab-coupon-img {
 
 section.skybab-coupon .skybab-coupon-img img {
 	width: 65%;
-	margin: 4rem 0 0 2.2rem;
+	margin: 4rem 0 0 2.05rem;
 	vertical-align: middle
 }
 
@@ -832,7 +833,7 @@ footer {
 }
 
 footer strong {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	line-height: 2.5rem
 }
