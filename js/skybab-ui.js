@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 //버튼
 document.addEventListener("DOMContentLoaded", () => {
 	const scrollTriggerBtn = document.querySelector('.btn-coupon'); // 상단 버튼
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (couponScrollTarget) {
 		couponScrollTarget.addEventListener('click', () => {
 			popup.style.display = 'block';
-			//mask.style.display = 'block';
 		});
 	}
 
@@ -113,45 +111,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      const alreadyVisible = entry.target.classList.contains("section-visible");
-      if (entry.isIntersecting && !alreadyVisible) {
-        entry.target.classList.add("section-visible");
-
-        const lines = entry.target.querySelectorAll('.fade-line');
-        lines.forEach((line, i) => {
-          line.style.transitionDelay = `${i * 0.1}s`;
-          line.classList.add("visible");
-        });
-
-        // 다시 안 보이게 해도 관찰 종료
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.section-fade').forEach(section => {
-    sectionObserver.observe(section);
-  });
-});
-
 
 $(function() {
-  var images = [
-    "./img/skybab-index01.webp",
-    "./img/skybab-index02.webp",
-    "./img/skybab-index03.webp",
-    "./img/skybab-index04.webp"
-  ];
+  var $images = $('.slider img');
   var index = 0;
 
+  $images.eq(index).addClass('active');
+
   setInterval(function() {
-    index = (index + 1) % images.length;
-    $('.div-bg01').css({
-      'background-image': 'url(' + images[index] + ')',
-      'background-size': 'cover'  
-    });
-  }, 3000); // 3초마다 변경
+    $images.eq(index).removeClass('active');
+    index = (index + 1) % $images.length;
+    $images.eq(index).addClass('active');
+  }, 3000);
 });
