@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 //버튼
 document.addEventListener("DOMContentLoaded", () => {
 	const scrollTriggerBtn = document.querySelector('.btn-coupon'); // 상단 버튼
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (couponScrollTarget) {
 		couponScrollTarget.addEventListener('click', () => {
 			popup.style.display = 'block';
-			//mask.style.display = 'block';
 		});
 	}
 
@@ -114,62 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      const alreadyVisible = entry.target.classList.contains("section-visible");
-      if (entry.isIntersecting && !alreadyVisible) {
-        entry.target.classList.add("section-visible");
-
-        const lines = entry.target.querySelectorAll('.fade-line');
-        lines.forEach((line, i) => {
-          line.style.transitionDelay = `${i * 0.1}s`;
-          line.classList.add("visible");
-        });
-
-        // 다시 안 보이게 해도 관찰 종료
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.section-fade').forEach(section => {
-    sectionObserver.observe(section);
-  });
-});
-
-
-
-
-
 $(function() {
-  var images = [
-    "../img/skybab-index01.png",
-    "../img/skybab-index02.png",
-    "../img/skybab-index03.png",
-    "../img/skybab-index04.png"
-  ];
+  var $images = $('.slider img');
   var index = 0;
 
-  // 첫 이미지 세팅
-  $('.bg-layer').eq(0).css('background-image', 'url(' + images[index] + ')');
+  $images.eq(index).addClass('active');
 
   setInterval(function() {
-    index = (index + 1) % images.length;
-
-    var $current = $('.bg-layer').eq(0);
-    var $next = $('.bg-layer.next');
-
-    // next 레이어에 새 이미지 설정
-    $next.css('background-image', 'url(' + images[index] + ')');
-
-    // fade in next 레이어
-    $next.css('opacity', 1);
-
-    // 일정 시간 후 현재 레이어에 덮어쓰고 next 다시 숨김
-    setTimeout(function() {
-      $current.css('background-image', 'url(' + images[index] + ')');
-      $next.css('opacity', 0);
-    }, 1000); // transition 시간과 동일
+    $images.eq(index).removeClass('active');
+    index = (index + 1) % $images.length;
+    $images.eq(index).addClass('active');
   }, 3000);
 });
